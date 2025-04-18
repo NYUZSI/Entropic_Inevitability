@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://boba8c07n0x1s"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background*" type="Node2D" parent="."]
+z_index = -5
+
+[node name="Pond*" type="Node" parent="."]
+
+[node name="Trees*" type="Node" parent="Pond*"]
+
+[node name="Tree1" type="Node2D" parent="Pond*/Trees*"]
+
+[node name="Tree2" type="Node2D" parent="Pond*/Trees*"]
+
+[node name="Tree3" type="Node2D" parent="Pond*/Trees*"]
+
+[node name="X-Ray" type="Node2D" parent="Pond*/Trees*"]
+
+[node name="Sprayer" type="Node2D" parent="Pond*/Trees*"]
+
+[node name="Hallucinations*" type="Node" parent="Pond*"]
+
+[node name="Halu1" type="Node2D" parent="Pond*/Hallucinations*"]
+
+[node name="Halu2" type="Node2D" parent="Pond*/Hallucinations*"]
+
+[node name="Halu3" type="Node2D" parent="Pond*/Hallucinations*"]
+
+[node name="Light" type="Node2D" parent="Pond*/Hallucinations*"]
+
+[node name="Rune*" type="Node" parent="."]
+
+[node name="Rocks*" type="Node" parent="Rune*"]
+
+[node name="Rock1" type="Node2D" parent="Rune*/Rocks*"]
+
+[node name="Rock2" type="Node2D" parent="Rune*/Rocks*"]
+
+[node name="Rock3" type="Node2D" parent="Rune*/Rocks*"]
+
+[node name="Rock4" type="Node2D" parent="Rune*/Rocks*"]
+
+[node name="WeatherControl" type="Node2D" parent="Rune*/Rocks*"]
+
+[node name="GravityControl" type="Node2D" parent="Rune*/Rocks*"]
+
+[node name="RuneRock*" type="Node" parent="Rune*"]
+
+[node name="HummingStone" type="Node2D" parent="Rune*/RuneRock*"]
+
+[node name="FreqSelect" type="Node2D" parent="Rune*/RuneRock*"]
+
+[node name="Cabin*" type="Node" parent="."]
+
+[node name="TpCabin" type="Node2D" parent="Cabin*"]
+
+[node name="RecordPlayer" type="Node2D" parent="Cabin*"]
