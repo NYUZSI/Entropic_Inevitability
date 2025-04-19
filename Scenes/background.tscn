@@ -16,7 +16,9 @@ position = Vector2(-4184, -43)
 texture = ExtResource("1_52cnj")
 
 [node name="BalviewXRay" type="Sprite2D" parent="."]
-position = Vector2(-4184, -43)
+visible = false
+z_index = 3
+position = Vector2(-4187, -73)
 texture = ExtResource("2_kknvw")
 
 [node name="Center" type="Sprite2D" parent="."]

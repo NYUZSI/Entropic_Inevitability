@@ -31,3 +31,7 @@ func _on_grav_right_pressed() -> void:
 	grav_index += 1
 	if grav_index == 3:
 		grav_index = 0
+
+
+func _on_light_switch_pressed() -> void:
+	background.lights_on = true
