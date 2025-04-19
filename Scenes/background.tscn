@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://coab6fguh2w1r"]
+[gd_scene load_steps=7 format=3 uid="uid://coab6fguh2w1r"]
 
 [ext_resource type="Texture2D" uid="uid://dvahn7acuoxxs" path="res://Sprites/össz view/-bal.png" id="1_52cnj"]
 [ext_resource type="Texture2D" uid="uid://eqsa4lmsg1xq" path="res://Sprites/össz view/-xrayviewbal.png" id="2_kknvw"]
 [ext_resource type="Texture2D" uid="uid://cjta7imdk2rdq" path="res://Sprites/össz view/közép.png" id="3_lcu6m"]
 [ext_resource type="Texture2D" uid="uid://b4qvclxktl4qt" path="res://Sprites/össz view/jobb.png" id="4_ug7kl"]
 [ext_resource type="Texture2D" uid="uid://c1tx6af3duuxo" path="res://Sprites/VEZERLŐPULT.png" id="5_8mnm5"]
+[ext_resource type="Script" path="res://color_rect.gd" id="6_ar1w7"]
 
 [node name="Background" type="Node2D"]
 
@@ -28,3 +29,14 @@ texture = ExtResource("4_ug7kl")
 [node name="Dashboard" type="Sprite2D" parent="."]
 z_index = 5
 texture = ExtResource("5_8mnm5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -20
+offset_left = -10725.0
+offset_top = -3742.0
+offset_right = -10685.0
+offset_bottom = -3702.0
+scale = Vector2(511.47, 195.494)
+color = Color(0, 0, 0, 1)
+script = ExtResource("6_ar1w7")

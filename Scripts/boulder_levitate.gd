@@ -15,20 +15,20 @@ func _ready():
 func _process(delta: float) -> void:
 	if gravity == 0:
 		if position.y < earth_pos:
-			position.y += 100 * delta
+			position.y += 400 * delta
 		if animation_player.is_playing():
 			animation_player.stop()
 	if gravity == 1:
 		if position.y > venus_pos:
-			position.y -= 50 * delta
+			position.y -= 100 * delta
 		if position.y < venus_pos:
-			position.y += 70 * delta
+			position.y += 300 * delta
 		if not animation_player.is_playing():
 			animation_player.play("Shake")
 	if gravity == 2:
 		if position.y > moon_pos:
-			position.y -= 50 * delta
+			position.y -= 100 * delta
 		if position.y < moon_pos:
-			position.y += 70 * delta
+			position.y += 130 * delta
 		if not animation_player.is_playing():
 			animation_player.play("Shake")

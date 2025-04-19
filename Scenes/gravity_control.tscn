@@ -4,16 +4,6 @@
 
 [node name="GravityControl" type="Node2D"]
 
-[node name="Left" type="Sprite2D" parent="."]
-position = Vector2(-30, 0)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_6812i")
-
-[node name="Right" type="Sprite2D" parent="."]
-position = Vector2(30, 0)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_6812i")
-
 [node name="GravityIndicator" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_6812i")
