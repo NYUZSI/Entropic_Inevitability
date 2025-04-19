@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://2c4hm7upjlu8"]
+
+[node name="InvisiButton" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 8.0
+offset_bottom = 8.0
