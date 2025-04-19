@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://blnjluhtr1bht"]
+[gd_scene load_steps=2 format=3 uid="uid://blnjluhtr1bht"]
+
+[ext_resource type="Script" path="res://Scripts/halu.gd" id="1_8rws7"]
 
 [node name="Halu" type="Node2D"]
+script = ExtResource("1_8rws7")

@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://brahnmixvfu0u"]
+[gd_scene load_steps=2 format=3 uid="uid://brahnmixvfu0u"]
+
+[ext_resource type="Script" path="res://Scripts/sárgulás.gd" id="1_u7apy"]
 
 [node name="Sárgulás" type="Node2D"]
+script = ExtResource("1_u7apy")

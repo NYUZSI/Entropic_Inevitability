@@ -548,7 +548,6 @@ texture = ExtResource("30_gsdhq")
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar" method="_on_light_switch_pressed"]
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar/LightSwitch" method="_on_pressed"]
 [connection signal="pressed" from="Pond*/Trees*/X-Ray/X-RayButton" to="." method="_on_x_ray_button_pressed"]
-[connection signal="pressed" from="Pond*/Hallucinations/Light/LightButton/LightButton" to="Pond*/Hallucinations" method="_on_light_button_pressed"]
 [connection signal="pressed" from="Pond*/Hallucinations/Light/LightButton/LightButton" to="Pond*/Hallucinations/Light/LightButton" method="_on_light_button_pressed"]
 [connection signal="pressed" from="Pond*/Hallucinations/Light/LightButton/LightButton" to="Pond*/Hallucinations/Light/ColorRect" method="_on_light_button_pressed"]
 [connection signal="pressed" from="Rune*/Rocks*/GravLeft" to="." method="_on_grav_left_pressed"]

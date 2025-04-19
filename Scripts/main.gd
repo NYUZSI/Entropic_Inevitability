@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var boulder: Node2D = $"Rune*/Rocks*/Boulder"
+@onready var background: Node2D = $Background
 
 var grav_index = 0
 

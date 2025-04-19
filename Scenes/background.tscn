@@ -1,13 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://coab6fguh2w1r"]
 
 [ext_resource type="Texture2D" uid="uid://dvahn7acuoxxs" path="res://Sprites/össz view/-bal.png" id="1_52cnj"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="1_xtprk"]
 [ext_resource type="Texture2D" uid="uid://eqsa4lmsg1xq" path="res://Sprites/össz view/-xrayviewbal.png" id="2_kknvw"]
 [ext_resource type="Texture2D" uid="uid://cjta7imdk2rdq" path="res://Sprites/össz view/közép.png" id="3_lcu6m"]
 [ext_resource type="Texture2D" uid="uid://b4qvclxktl4qt" path="res://Sprites/össz view/jobb.png" id="4_ug7kl"]
 [ext_resource type="Texture2D" uid="uid://c1tx6af3duuxo" path="res://Sprites/VEZERLŐPULT.png" id="5_8mnm5"]
-[ext_resource type="Script" path="res://color_rect.gd" id="6_ar1w7"]
 
 [node name="Background" type="Node2D"]
+script = ExtResource("1_xtprk")
 
 [node name="Balview" type="Sprite2D" parent="."]
 z_index = 3
@@ -30,13 +31,34 @@ texture = ExtResource("4_ug7kl")
 z_index = 5
 texture = ExtResource("5_8mnm5")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Darkness" type="Node" parent="."]
+
+[node name="darkleft" type="ColorRect" parent="Darkness"]
 visible = false
-z_index = -20
-offset_left = -10725.0
-offset_top = -3742.0
-offset_right = -10685.0
-offset_bottom = -3702.0
-scale = Vector2(511.47, 195.494)
+z_index = 4
+offset_left = -9967.0
+offset_top = -3161.0
+offset_right = -9927.0
+offset_bottom = -3121.0
+scale = Vector2(187.454, 161.631)
 color = Color(0, 0, 0, 1)
-script = ExtResource("6_ar1w7")
+
+[node name="darkcenter" type="ColorRect" parent="Darkness"]
+visible = false
+z_index = 4
+offset_left = -2431.0
+offset_top = -3129.0
+offset_right = -2391.0
+offset_bottom = -3089.0
+scale = Vector2(114.601, 181.562)
+color = Color(0, 0, 0, 1)
+
+[node name="darkright" type="ColorRect" parent="Darkness"]
+visible = false
+z_index = 4
+offset_left = 2128.0
+offset_top = -3140.0
+offset_right = 2168.0
+offset_bottom = -3100.0
+scale = Vector2(152.699, 188.706)
+color = Color(0, 0, 0, 1)
