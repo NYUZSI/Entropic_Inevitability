@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://coab6fguh2w1r"]
+
+[ext_resource type="Texture2D" uid="uid://dvahn7acuoxxs" path="res://Sprites/össz view/-bal.png" id="1_52cnj"]
+[ext_resource type="Texture2D" uid="uid://eqsa4lmsg1xq" path="res://Sprites/össz view/-xrayviewbal.png" id="2_kknvw"]
+[ext_resource type="Texture2D" uid="uid://cjta7imdk2rdq" path="res://Sprites/össz view/közép.png" id="3_lcu6m"]
+[ext_resource type="Texture2D" uid="uid://b4qvclxktl4qt" path="res://Sprites/össz view/jobb.png" id="4_ug7kl"]
+[ext_resource type="Texture2D" uid="uid://c1tx6af3duuxo" path="res://Sprites/VEZERLŐPULT.png" id="5_8mnm5"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Balview" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(-4184, -43)
+texture = ExtResource("1_52cnj")
+
+[node name="BalviewXRay" type="Sprite2D" parent="."]
+position = Vector2(-4184, -43)
+texture = ExtResource("2_kknvw")
+
+[node name="Center" type="Sprite2D" parent="."]
+position = Vector2(-182, -417)
+texture = ExtResource("3_lcu6m")
+
+[node name="Jobb" type="Sprite2D" parent="."]
+position = Vector2(4081, -133)
+texture = ExtResource("4_ug7kl")
+
+[node name="Dashboard" type="Sprite2D" parent="."]
+z_index = 5
+texture = ExtResource("5_8mnm5")

@@ -1,9 +1,9 @@
 extends Camera2D
 
 var alignment: int = 1
-var leftpos: int = -1160
-var basepos: int = 0
-var rightpos: int = 1160
+var leftpos: int = -3696
+var basepos: int = -147
+var rightpos: int = 3695
 
 func _ready():
 	position.x = basepos
@@ -21,19 +21,19 @@ func _input(event):
 
 func _process(delta):
 	if alignment == 0 and position.x > leftpos:
-		position.x -= 1500 * delta
+		position.x -= 3000 * delta
 		if position.x < leftpos:
 			position.x = leftpos
 	if alignment == 1 and position.x != basepos:
 		if position.x < basepos:
-			position.x += 1500 * delta
+			position.x += 3000 * delta
 			if position.x > basepos:
 				position.x = basepos
 		if position.x > basepos:
-			position.x -= 1500 * delta
+			position.x -= 3000 * delta
 			if position.x < basepos:
 				position.x = basepos
 	if alignment == 2 and position.x < rightpos:
-		position.x += 1500 * delta
+		position.x += 3000 * delta
 		if position.x > rightpos:
 			position.x = rightpos
