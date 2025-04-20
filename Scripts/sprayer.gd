@@ -32,7 +32,7 @@ func _on_red_button_pressed() -> void:
 func _on_activator_pressed() -> void:
 	if active == false:
 		active = true
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(3.0).timeout
 		active = false
 	else:
 		active = false

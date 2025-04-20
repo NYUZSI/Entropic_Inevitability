@@ -1,5 +1,8 @@
 extends Camera2D
 
+@onready var naplo: Node2D = $"InHandNapló"
+
+
 var alignment: int = 1
 var leftpos: int = -3696
 var basepos: int = -147
@@ -7,6 +10,7 @@ var rightpos: int = 3695
 
 func _ready():
 	position.x = basepos
+	naplo.visible = false
 
 func _input(event):
 	if event.is_action_pressed("Camera Left"):
@@ -37,3 +41,7 @@ func _process(delta):
 		position.x += 3000 * delta
 		if position.x > rightpos:
 			position.x = rightpos
+
+
+func _on_napló_click_pressed() -> void:
+	naplo.visible = true

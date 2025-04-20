@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
 var rightpos: Vector2 = Vector2(-3158, -530)
-var leftpos: Vector2 = Vector2(-5598, -107)
+var leftpos: Vector2 = Vector2(-5432, -178)
 var desiredpos: int = 1
 var active = false
 var speed = 1000

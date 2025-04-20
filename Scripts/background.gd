@@ -6,21 +6,35 @@ extends Node2D
 @onready var x_ray: Node2D = $"../Pond/Trees/X-Ray"
 @onready var x_ray_view: Sprite2D = $BalviewXRay
 
-var darkness
+var darkness: Array
+var lights_on: bool
+var light_blocker: bool
 
 func _ready() -> void:
+	lights_on = false
 	darkness = [darkleft, darkcenter, darkright]
 	for dark in darkness:
 		dark.visible = true
-		dark.z_index = 4
+		dark.z_index = 40
 	x_ray_view.visible = false
+	light_blocker = false
+
+
+func reset():
+	lights_on = false
+	darkleft.z_index = 40
+	darkcenter.z_index = 40
+	darkright.z_index = 40
+	x_ray_view.visible = false
+	await get_tree().create_timer(3.0).timeout
+	light_blocker = false
 	
+
 
 func _process(delta: float) -> void:
 	x_ray_view.visible = x_ray.on
-
-
-func _on_light_switch_pressed() -> void:
-	for dark in darkness:
-		dark.z_index = -10
-		await get_tree().create_timer(1.0).timeout
+	if lights_on and light_blocker == false:
+		for dark in darkness:
+			dark.z_index = -10
+			await get_tree().create_timer(1.0).timeout
+		light_blocker = true

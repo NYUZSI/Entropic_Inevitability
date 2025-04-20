@@ -320,7 +320,7 @@ texture = ExtResource("32_ieyh2")
 
 [node name="ColorRect" type="ColorRect" parent="Pond/Hallucinations/Light"]
 modulate = Color(1, 1, 1, 0)
-z_index = 45
+z_index = 4
 offset_left = -5951.0
 offset_top = -1469.0
 offset_right = -5911.0
@@ -448,7 +448,7 @@ z_index = 3
 script = ExtResource("22_db8xs")
 
 [node name="RedCanister" type="Sprite2D" parent="Pond/Trees/Sprayer"]
-z_index = 61
+z_index = 60
 position = Vector2(-3447, 1177)
 texture = ExtResource("8_eglbx")
 
@@ -574,26 +574,28 @@ earth_pos = 192
 venus_pos = 92
 moon_pos = -708
 
+[node name="GravLeft" parent="Rune/Rocks" instance=ExtResource("3_kscrm")]
+z_index = 60
+offset_left = 312.0
+offset_top = 1041.0
+offset_right = 320.0
+offset_bottom = 1049.0
+scale = Vector2(14.2912, 12.0855)
+
+[node name="GravRight" parent="Rune/Rocks" instance=ExtResource("3_kscrm")]
+z_index = 60
+offset_left = 513.0
+offset_top = 1035.0
+offset_right = 521.0
+offset_bottom = 1043.0
+scale = Vector2(13.665, 11.9171)
+
 [node name="PlanetScreen" type="AnimatedSprite2D" parent="Rune/Rocks"]
 z_index = 60
 position = Vector2(465, 937)
 sprite_frames = SubResource("SpriteFrames_216o4")
 animation = &"EARTH"
 script = ExtResource("10_shpuh")
-
-[node name="GravLeft" type="Button" parent="Rune/Rocks"]
-offset_left = 312.0
-offset_top = 1042.0
-offset_right = 320.0
-offset_bottom = 1050.0
-scale = Vector2(14.1046, 11.9646)
-
-[node name="GravRight" type="Button" parent="Rune/Rocks"]
-offset_left = 514.0
-offset_top = 1034.0
-offset_right = 522.0
-offset_bottom = 1042.0
-scale = Vector2(13.6147, 12.0163)
 
 [node name="RandoSliders" type="Node" parent="Rune"]
 
@@ -666,7 +668,6 @@ offset_bottom = -63.0
 rotation = 1.20781
 scale = Vector2(3.24944, 7.76644)
 
-[connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="." method="_on_light_switch_pressed"]
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="Background" method="_on_light_switch_pressed"]
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar" method="_on_light_switch_pressed"]
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar/LightSwitch" method="_on_pressed"]
@@ -682,8 +683,8 @@ scale = Vector2(3.24944, 7.76644)
 [connection signal="pressed" from="Pond/Trees/Sprayer/Move Sprinkler Left/LeftMover" to="Pond/Trees/Sprayer" method="_on_left_mover_pressed"]
 [connection signal="pressed" from="Pond/Trees/Sprayer/Move Sprinkler Right/RightMover" to="Pond/Trees/Sprayer" method="_on_right_mover_pressed"]
 [connection signal="pressed" from="Rune/RuneRock/HummingStone/FreqSelect/WheelTri/InvisiButton" to="Rune/RuneRock/HummingStone/FreqSelect" method="_on_invisi_button_pressed"]
-[connection signal="pressed" from="Rune/Rocks/GravLeft" to="Rune/Rocks" method="_on_grav_left_pressed"]
-[connection signal="pressed" from="Rune/Rocks/GravRight" to="Rune/Rocks" method="_on_grav_right_pressed"]
+[connection signal="pressed" from="Rune/Rocks/GravLeft" to="." method="_on_grav_left_pressed"]
+[connection signal="pressed" from="Rune/Rocks/GravRight" to="." method="_on_grav_right_pressed"]
 [connection signal="pressed" from="Cabin/RecordPlayer/Sprite2D/BackButton" to="Cabin/RecordPlayer" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Cabin/RecordPlayer/Sprite2D/ForwButton" to="Cabin/RecordPlayer" method="_on_forw_button_pressed"]
 [connection signal="pressed" from="Cabin/RecordPlayer/Sprite2D/PlayButton" to="Cabin/RecordPlayer" method="_on_play_button_pressed"]

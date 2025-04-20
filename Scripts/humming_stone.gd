@@ -5,10 +5,17 @@ extends Node2D
 @onready var active_rune: Sprite2D = $ActiveRune
 
 var severity: float
-var stone_frequency
+var present: bool
+var stone_frequency: int
 var speed = 0.1
 
 func _ready() -> void:
+	active_rune.modulate.a = 0.0
+	severity = 0.0
+	stone_frequency = 0
+
+
+func reset():
 	active_rune.modulate.a = 0.0
 	severity = 0.0
 	stone_frequency = 0
@@ -30,6 +37,10 @@ func _process(delta: float) -> void:
 	if stone_frequency == 0:
 		if active_rune.modulate.a > 0.0:
 			active_rune.modulate.a -= 1 * delta
+		severity = 0.0
+	if present:
+		stone_frequency = randi_range(1, 4)
+		present = false
 
 
 func _input(event: InputEvent) -> void:

@@ -11,6 +11,10 @@ func _ready() -> void:
 	frequency = 0
 
 
+func reset():
+	frequency = 0
+
+
 func _process(delta: float) -> void:
 	wheel_tri.position.x = wheel_tri.positions[frequency][0]
 	wheel_tri.position.y = wheel_tri.positions[frequency][1]

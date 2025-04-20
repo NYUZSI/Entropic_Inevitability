@@ -9,6 +9,11 @@ func _ready() -> void:
 	playing = false
 
 
+func reset():
+	sound = 0
+	playing = false
+
+
 func _on_play_button_pressed() -> void:
 	if playing == false:
 		playing = true

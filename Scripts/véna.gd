@@ -7,12 +7,13 @@ enum Position{LEFT, RIGHT}
 @onready var x_ray: Node2D = $"../X-Ray"
 
 
-var present: bool = false
+var present: bool
 var severity: float = 0.0
 var sprayed: bool = false
 
 func _ready() -> void:
-	modulate.a8 = 0
+	modulate.a = 0.0
+	present = false
 
 func _process(delta: float) -> void:
 	if x_ray.on == false:
@@ -20,29 +21,25 @@ func _process(delta: float) -> void:
 	else:
 		visible = true
 	if present == true:
-		modulate.a8 += 50 * delta
-		if severity <= 1.0:
-			severity += 0.05 * delta
-			if severity > 1.0:
-				severity = 1.0
+		modulate.a += 0.5 * delta
+		modulate.a = clampf(modulate.a, 0.0, 0.7)
+		severity += 0.05 * delta
+		severity = clampf(severity, 0.0, 1.0)
 		if placement == Position.RIGHT:
 			if sprayer.active == true:
 				if sprayer.pos == 1:
 					if sprayer.pipecolor == 1:
-						modulate.a8 -= 200 * delta
-						if modulate.a8 == 0:
+						modulate.a -= 1 * delta
+						if modulate.a == 0:
 							present = false
 		if placement == Position.LEFT:
 			if sprayer.active == true:
 				if sprayer.pos == 0:
 					if sprayer.pipecolor == 1:
-						modulate.a8 -= 200 * delta
-						if modulate.a8 == 0:
+						modulate.a -= 1 * delta
+						if modulate.a == 0:
 							present = false
 	if present == false:
-		modulate.a8 = 0
+		modulate.a -= 1 * delta
+		clamp(modulate.a, 0.0, 0.9)
 		severity = 0.0
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Tester"):
-		present = true

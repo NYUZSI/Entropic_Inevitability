@@ -4,19 +4,15 @@ var present: bool = false
 var severity: float = 0.0
 
 func _ready() -> void:
-	modulate.a8 = 0
+	modulate.a = 0.0
+	present = false
 
 func _process(delta: float) -> void:
 	if present == true:
-		modulate.a8 += 50 * delta
-		if severity <= 1.0:
-			severity += 0.05 * delta
-			if severity > 1.0:
-				severity = 1.0
-	if present == false:
-		modulate.a8 = 0
+		modulate.a += 0.3 * delta
+		modulate.a = clampf(modulate.a, 0.0, 0.5)
+		severity += 0.05 * delta
+		severity = clampf(severity, 0.0, 1.0)
+	else:
+		modulate.a = 0
 		severity = 0.0
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Tester"):
-		present = true
