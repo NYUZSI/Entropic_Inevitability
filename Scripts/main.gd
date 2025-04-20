@@ -15,6 +15,7 @@ var anomalies: Array
 var selected_anomaly: Node
 var severity: float
 var instability_counter: float
+var start: bool
 
 func _ready() -> void:
 	anomalies = [hallucinations, trees, rune_rock, rocks, cabin]
@@ -32,6 +33,7 @@ func reset():
 	light_switch.reset()
 	for i in range(3):
 		background.reset()
+	instability_scale.reset()
 	anomalies.shuffle()
 	timehelper = false
 	background.lights_on = false
@@ -40,7 +42,7 @@ func reset():
 
 
 func _process(delta: float) -> void:
-	if background.lights_on == true:
+	if start == true:
 		if timehelper == false:
 			timehelper = true
 			await get_tree().create_timer(5).timeout
@@ -60,6 +62,9 @@ func _process(delta: float) -> void:
 
 func _on_light_switch_pressed() -> void:
 	background.lights_on = true
+	await get_tree().create_timer(12).timeout
+	instability_scale.visible = true
+	start = true
 
 
 func _input(event: InputEvent) -> void:

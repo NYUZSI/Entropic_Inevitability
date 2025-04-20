@@ -1,14 +1,19 @@
-[gd_scene load_steps=84 format=3 uid="uid://boba8c07n0x1s"]
+[gd_scene load_steps=89 format=3 uid="uid://boba8c07n0x1s"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ojlo6"]
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="2_j7hcf"]
+[ext_resource type="Script" path="res://Scripts/wildcards.gd" id="2_olmi7"]
 [ext_resource type="PackedScene" uid="uid://coab6fguh2w1r" path="res://Scenes/background.tscn" id="2_p30c0"]
+[ext_resource type="Texture2D" uid="uid://bxauetblnjnbv" path="res://Sprites/80-Controlled Chaos.png" id="2_uraxw"]
 [ext_resource type="PackedScene" uid="uid://2c4hm7upjlu8" path="res://Scenes/invisibutton.tscn" id="3_kscrm"]
+[ext_resource type="Texture2D" uid="uid://v4b3efp3qsiu" path="res://Sprites/screenwriting-101.png" id="3_o4hl2"]
 [ext_resource type="Texture2D" uid="uid://dxdyuy681k1ty" path="res://Sprites/kar/kar1.png" id="4_8eruq"]
 [ext_resource type="PackedScene" uid="uid://cgyd2jaxvvb13" path="res://Scenes/in_hand_napló.tscn" id="4_jnx72"]
+[ext_resource type="Texture2D" uid="uid://cyy3hv36ncsm6" path="res://Sprites/simple-geometry.png" id="4_kbcs8"]
 [ext_resource type="PackedScene" uid="uid://bksodmk1l2els" path="res://Scenes/boulder.tscn" id="4_qlg6m"]
 [ext_resource type="PackedScene" uid="uid://dr0wxqhgya05l" path="res://Scenes/instability_scale.tscn" id="5_amqxo"]
 [ext_resource type="Texture2D" uid="uid://dm5y7ugg2d55q" path="res://Sprites/kar/kar2.png" id="5_l4mhh"]
+[ext_resource type="Texture2D" uid="uid://moq2meflg6aq" path="res://Sprites/Wildcard-man.png" id="5_wxyn4"]
 [ext_resource type="Texture2D" uid="uid://ei3d15wdyrjq" path="res://Sprites/napló.png" id="6_7q6wn"]
 [ext_resource type="Script" path="res://Scripts/kar.gd" id="6_qk0cr"]
 [ext_resource type="Texture2D" uid="uid://c8m68kkxu0g3h" path="res://Sprites/bolygók/föld.png" id="7_3o1kg"]
@@ -237,6 +242,33 @@ animations = [{
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ojlo6")
 
+[node name="Wildcards" type="Node2D" parent="."]
+z_index = 1000
+script = ExtResource("2_olmi7")
+
+[node name="Main" type="Sprite2D" parent="Wildcards"]
+z_index = 1000
+position = Vector2(-172, -916)
+scale = Vector2(0.610801, 0.610801)
+texture = ExtResource("2_uraxw")
+
+[node name="wc1" type="Sprite2D" parent="Wildcards"]
+position = Vector2(-909, -3.99999)
+scale = Vector2(0.77447, 0.77447)
+texture = ExtResource("3_o4hl2")
+
+[node name="wc2" type="Sprite2D" parent="Wildcards"]
+self_modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(-182, -3.99999)
+scale = Vector2(0.77447, 0.77447)
+texture = ExtResource("4_kbcs8")
+
+[node name="wc3" type="Sprite2D" parent="Wildcards"]
+self_modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(528, -3.99999)
+scale = Vector2(0.77447, 0.77447)
+texture = ExtResource("5_wxyn4")
+
 [node name="Background" parent="." instance=ExtResource("2_p30c0")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -250,6 +282,7 @@ visible = false
 z_index = 60
 
 [node name="InstabilityScale" parent="Camera2D" instance=ExtResource("5_amqxo")]
+z_index = 80
 position = Vector2(-1190, -1325)
 
 [node name="LightSwitch" type="Node2D" parent="."]
@@ -669,7 +702,6 @@ script = ExtResource("58_lx1a3")
 [node name="CabinSprites" type="AnimatedSprite2D" parent="Cabin/TpCabin"]
 position = Vector2(1335, 93)
 sprite_frames = SubResource("SpriteFrames_u46vf")
-animation = &"tp1"
 script = ExtResource("63_g3q2u")
 
 [node name="RecordPlayer" type="Node2D" parent="Cabin"]

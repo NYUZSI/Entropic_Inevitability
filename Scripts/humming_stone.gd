@@ -58,6 +58,9 @@ func _process(delta: float) -> void:
 			for freq in freqs:
 				freq.stop()
 			freqs[stone_frequency - 1 ].play()
+	if not hum:
+		for freq in freqs:
+			freq.stop()
 
 
 func _input(event: InputEvent) -> void:

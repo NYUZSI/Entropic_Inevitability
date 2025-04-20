@@ -10,9 +10,11 @@ var desired_x: float
 
 func _ready() -> void:
 	sub_csik.position.x = base_x
+	visible = false
 
 func reset():
 	sub_csik.position.x = base_x
+	visible = false
 	
 
 
