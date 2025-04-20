@@ -8,6 +8,7 @@ extends Node2D
 @onready var cabin: Node = $Cabin
 @onready var kar: AnimatedSprite2D = $LightSwitch/Kar
 @onready var light_switch: Button = $LightSwitch/Kar/LightSwitch
+@onready var instability_scale: Node2D = $Camera2D/InstabilityScale
 
 var timehelper: bool
 var anomalies: Array
@@ -42,21 +43,19 @@ func _process(delta: float) -> void:
 	if background.lights_on == true:
 		if timehelper == false:
 			timehelper = true
-			await get_tree().create_timer(3).timeout
+			await get_tree().create_timer(5).timeout
 			timehelper = false
 			selected_anomaly = anomalies.pick_random()
 			selected_anomaly.anomalous = true
 		severity = hallucinations.severity + trees.severity + rune_rock.severity + rocks.severity + cabin.severity
 		if instability_counter < 50.00:
-			instability_counter += severity * delta
+			instability_counter += severity * 0.2 * delta
 		else:
-			instability_counter += severity * 1.5 * delta
+			instability_counter += severity * 0.5 * delta
 		instability_counter = clampf(instability_counter, 0.0, 100.0)
 		if instability_counter == 100.00:
-			print("sux2suk")
 			reset()
-	
-
+	instability_scale.desired_x = instability_scale.base_x + instability_scale.diff * (instability_counter * 0.01)
 
 
 func _on_light_switch_pressed() -> void:

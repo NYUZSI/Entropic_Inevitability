@@ -29,17 +29,17 @@ func _process(delta: float) -> void:
 			if sprayer.active == true:
 				if sprayer.pos == 1:
 					if sprayer.pipecolor == 1:
-						modulate.a -= 1 * delta
-						if modulate.a == 0:
+						modulate.a -= 3 * delta
+						if modulate.a <= 0.01:
 							present = false
 		if placement == Position.LEFT:
 			if sprayer.active == true:
 				if sprayer.pos == 0:
 					if sprayer.pipecolor == 1:
-						modulate.a -= 1 * delta
-						if modulate.a == 0:
+						modulate.a -= 3 * delta
+						if modulate.a <= 0.01:
 							present = false
 	if present == false:
-		modulate.a -= 1 * delta
+		modulate.a = 0.0
 		clamp(modulate.a, 0.0, 0.9)
 		severity = 0.0

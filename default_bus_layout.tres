@@ -1,0 +1,83 @@
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://hsjwgetxmmuk"]
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_pc1xc"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_v0t6e"]
+resource_name = "PitchShift"
+pitch_scale = 2.0
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_0vgwo"]
+resource_name = "PitchShift"
+pitch_scale = 3.0
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_pfi4j"]
+resource_name = "PitchShift"
+pitch_scale = 4.0
+
+[resource]
+bus/0/volume_db = -10.9863
+bus/1/name = &"freq1stone"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -21.0931
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectPitchShift_pc1xc")
+bus/1/effect/0/enabled = true
+bus/2/name = &"freq1ctrl"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = -10.9863
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectPitchShift_pc1xc")
+bus/2/effect/0/enabled = true
+bus/3/name = &"freq2stone"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = -21.0931
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectPitchShift_v0t6e")
+bus/3/effect/0/enabled = true
+bus/4/name = &"freq2ctrl"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = -10.9863
+bus/4/send = &"Master"
+bus/4/effect/0/effect = SubResource("AudioEffectPitchShift_v0t6e")
+bus/4/effect/0/enabled = true
+bus/5/name = &"freq3stone"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = -21.0931
+bus/5/send = &"Master"
+bus/5/effect/0/effect = SubResource("AudioEffectPitchShift_0vgwo")
+bus/5/effect/0/enabled = true
+bus/6/name = &"freq3ctrl"
+bus/6/solo = false
+bus/6/mute = false
+bus/6/bypass_fx = false
+bus/6/volume_db = -10.9863
+bus/6/send = &"Master"
+bus/6/effect/0/effect = SubResource("AudioEffectPitchShift_0vgwo")
+bus/6/effect/0/enabled = true
+bus/7/name = &"freq4stone"
+bus/7/solo = false
+bus/7/mute = false
+bus/7/bypass_fx = false
+bus/7/volume_db = -21.0931
+bus/7/send = &"Master"
+bus/7/effect/0/effect = SubResource("AudioEffectPitchShift_pfi4j")
+bus/7/effect/0/enabled = true
+bus/8/name = &"freq4ctrl"
+bus/8/solo = false
+bus/8/mute = false
+bus/8/bypass_fx = false
+bus/8/volume_db = -10.9863
+bus/8/send = &"Master"
+bus/8/effect/0/effect = SubResource("AudioEffectPitchShift_pfi4j")
+bus/8/effect/0/enabled = true

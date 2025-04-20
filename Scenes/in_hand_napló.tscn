@@ -1,17 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgyd2jaxvvb13"]
+[gd_scene load_steps=11 format=3 uid="uid://cgyd2jaxvvb13"]
 
 [ext_resource type="Script" path="res://Scripts/in_hand_napló.gd" id="1_2t8vg"]
 [ext_resource type="Texture2D" uid="uid://bkotjjb6rtnw2" path="res://Sprites/naplóopen.png.png" id="2_w8m3n"]
-[ext_resource type="Texture2D" uid="uid://cyaptnyli1up5" path="res://Sprites/icon.svg" id="3_yjfjr"]
-[ext_resource type="Texture2D" uid="uid://k48ehad6a3fn" path="res://Sprites/RÚNA1.png" id="4_v1lro"]
-[ext_resource type="Texture2D" uid="uid://cks31elf5hgqg" path="res://Sprites/RÚNA2.png" id="5_3lquv"]
+[ext_resource type="Texture2D" uid="uid://dblh3etlm63hc" path="res://Sprites/napló/12.png" id="3_uarg3"]
+[ext_resource type="Texture2D" uid="uid://di3px038x5b82" path="res://Sprites/napló/34.png" id="4_ap8gs"]
+[ext_resource type="Texture2D" uid="uid://w1bsfrf5q2dx" path="res://Sprites/napló/56.png" id="5_oia3t"]
 [ext_resource type="PackedScene" uid="uid://2c4hm7upjlu8" path="res://Scenes/invisibutton.tscn" id="6_57kwm"]
+[ext_resource type="Texture2D" uid="uid://bscy7n7f0wpap" path="res://Sprites/napló/ide.png" id="6_rc7nn"]
+[ext_resource type="Texture2D" uid="uid://bavgiecnfe32j" path="res://Sprites/napló/oda.png" id="8_65gjp"]
+[ext_resource type="Texture2D" uid="uid://dk4s8dfr1svy8" path="res://Sprites/napló/x.png" id="9_8h3uk"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_y3br5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ihd0h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_yjfjr")
+"texture": ExtResource("3_uarg3")
 }],
 "loop": true,
 "name": &"page1",
@@ -19,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_v1lro")
+"texture": ExtResource("4_ap8gs")
 }],
 "loop": true,
 "name": &"page2",
@@ -27,34 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_3lquv")
-}],
-"loop": true,
-"name": &"page3",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_iskqr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_yjfjr")
-}],
-"loop": true,
-"name": &"page1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_v1lro")
-}],
-"loop": true,
-"name": &"page2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_3lquv")
+"texture": ExtResource("5_oia3t")
 }],
 "loop": true,
 "name": &"page3",
@@ -70,50 +46,43 @@ position = Vector2(-2.38419e-07, 0)
 scale = Vector2(1.54, 1.54)
 texture = ExtResource("2_w8m3n")
 
-[node name="LeftPage" type="AnimatedSprite2D" parent="InHandNapló"]
-position = Vector2(-529.87, 0)
-scale = Vector2(6.19973, 11.9577)
-sprite_frames = SubResource("SpriteFrames_y3br5")
-animation = &"page1"
-
-[node name="RightPage" type="AnimatedSprite2D" parent="InHandNapló"]
-position = Vector2(524.675, 0)
-scale = Vector2(6.71477, 12.3663)
-sprite_frames = SubResource("SpriteFrames_iskqr")
+[node name="Pages" type="AnimatedSprite2D" parent="InHandNapló"]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_ihd0h")
 animation = &"page1"
 
 [node name="Left" type="Sprite2D" parent="InHandNapló"]
-position = Vector2(-964.935, 844.805)
-texture = ExtResource("3_yjfjr")
+position = Vector2(-907, 780)
+texture = ExtResource("6_rc7nn")
 
 [node name="LeftButton" parent="InHandNapló/Left" instance=ExtResource("6_57kwm")]
-offset_left = -62.3377
-offset_top = -63.6363
-offset_right = -54.3377
-offset_bottom = -55.6363
-scale = Vector2(15.782, 15.981)
+offset_left = -78.7143
+offset_top = -56.6233
+offset_right = -70.7143
+offset_bottom = -48.6233
+scale = Vector2(19.9616, 14.0516)
 
 [node name="Right" type="Sprite2D" parent="InHandNapló"]
-position = Vector2(1031.17, 837.013)
-texture = ExtResource("3_yjfjr")
+position = Vector2(1006.49, 780)
+texture = ExtResource("8_65gjp")
 
 [node name="RightButton" parent="InHandNapló/Right" instance=ExtResource("6_57kwm")]
-offset_left = -62.3377
-offset_top = -63.6364
-offset_right = -54.3377
-offset_bottom = -55.6364
-scale = Vector2(15.6596, 16.117)
+offset_left = -73.3766
+offset_top = -53.896
+offset_right = -65.3766
+offset_bottom = -45.896
+scale = Vector2(18.4775, 13.3237)
 
 [node name="Close" type="Sprite2D" parent="InHandNapló"]
 position = Vector2(925.974, -871.429)
-texture = ExtResource("3_yjfjr")
+texture = ExtResource("9_8h3uk")
 
 [node name="CloseButton" parent="InHandNapló/Close" instance=ExtResource("6_57kwm")]
-offset_left = -62.987
-offset_top = -64.2857
-offset_right = -54.987
-offset_bottom = -56.2857
-scale = Vector2(16.0993, 16.127)
+offset_left = -45.4545
+offset_top = -40.2598
+offset_right = -37.4545
+offset_bottom = -32.2598
+scale = Vector2(11.604, 10.3673)
 
 [connection signal="pressed" from="InHandNapló/Left/LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="InHandNapló/Right/RightButton" to="." method="_on_right_button_pressed"]

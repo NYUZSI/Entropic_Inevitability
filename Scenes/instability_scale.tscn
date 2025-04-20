@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr0wxqhgya05l"]
+
+[ext_resource type="Script" path="res://Scripts/instability_scale.gd" id="1_wlpqc"]
+[ext_resource type="Texture2D" uid="uid://bdsfn2jgsxypi" path="res://Sprites/csik.png" id="2_61kw4"]
+[ext_resource type="Texture2D" uid="uid://cnhl6yqh0qmrs" path="res://Sprites/csikcsik.png" id="3_gjmt1"]
+
+[node name="InstabilityScale" type="Node2D"]
+script = ExtResource("1_wlpqc")
+
+[node name="OverCsik" type="Sprite2D" parent="."]
+texture = ExtResource("2_61kw4")
+
+[node name="SubCsik" type="Sprite2D" parent="OverCsik"]
+position = Vector2(-1000, 0)
+texture = ExtResource("3_gjmt1")

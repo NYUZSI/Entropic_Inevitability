@@ -1,13 +1,13 @@
-[gd_scene load_steps=80 format=3 uid="uid://boba8c07n0x1s"]
+[gd_scene load_steps=84 format=3 uid="uid://boba8c07n0x1s"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ojlo6"]
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="2_j7hcf"]
-[ext_resource type="Texture2D" uid="uid://cyaptnyli1up5" path="res://Sprites/icon.svg" id="2_ota31"]
 [ext_resource type="PackedScene" uid="uid://coab6fguh2w1r" path="res://Scenes/background.tscn" id="2_p30c0"]
 [ext_resource type="PackedScene" uid="uid://2c4hm7upjlu8" path="res://Scenes/invisibutton.tscn" id="3_kscrm"]
 [ext_resource type="Texture2D" uid="uid://dxdyuy681k1ty" path="res://Sprites/kar/kar1.png" id="4_8eruq"]
 [ext_resource type="PackedScene" uid="uid://cgyd2jaxvvb13" path="res://Scenes/in_hand_napló.tscn" id="4_jnx72"]
 [ext_resource type="PackedScene" uid="uid://bksodmk1l2els" path="res://Scenes/boulder.tscn" id="4_qlg6m"]
+[ext_resource type="PackedScene" uid="uid://dr0wxqhgya05l" path="res://Scenes/instability_scale.tscn" id="5_amqxo"]
 [ext_resource type="Texture2D" uid="uid://dm5y7ugg2d55q" path="res://Sprites/kar/kar2.png" id="5_l4mhh"]
 [ext_resource type="Texture2D" uid="uid://ei3d15wdyrjq" path="res://Sprites/napló.png" id="6_7q6wn"]
 [ext_resource type="Script" path="res://Scripts/kar.gd" id="6_qk0cr"]
@@ -61,6 +61,7 @@
 [ext_resource type="Script" path="res://Scripts/hallucinations.gd" id="32_32ts3"]
 [ext_resource type="Texture2D" uid="uid://cpsk4qwj52vky" path="res://Sprites/haluk/halu4.png" id="32_ieyh2"]
 [ext_resource type="Script" path="res://Scripts/pipes.gd" id="32_q01s5"]
+[ext_resource type="Texture2D" uid="uid://davkin02wmb13" path="res://Sprites/xraygomb.png" id="35_ti4ec"]
 [ext_resource type="Script" path="res://Scripts/color_rect.gd" id="37_y5au0"]
 [ext_resource type="Script" path="res://Scripts/light_button.gd" id="40_7jg1w"]
 [ext_resource type="Script" path="res://Scripts/sprinkler.gd" id="41_lijnq"]
@@ -73,6 +74,9 @@
 [ext_resource type="Script" path="res://Scripts/cabin.gd" id="58_lx1a3"]
 [ext_resource type="Script" path="res://Scripts/cabin_sprites.gd" id="63_g3q2u"]
 [ext_resource type="Script" path="res://Scripts/record_player.gd" id="64_nxymu"]
+[ext_resource type="AudioStream" uid="uid://cf5jjjh6s06by" path="res://Sprites/natural-bird-chirping-322497.mp3" id="75_fvknv"]
+[ext_resource type="AudioStream" uid="uid://b3kgxjf8jj3fd" path="res://Sprites/wind_44100-27055.mp3" id="76_60e4d"]
+[ext_resource type="AudioStream" uid="uid://bibb847kpuvwd" path="res://Sprites/energy-hum-29083.mp3" id="77_r8ioq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s87d3"]
 animations = [{
@@ -244,6 +248,9 @@ script = ExtResource("2_j7hcf")
 [node name="InHandNapló" parent="Camera2D" instance=ExtResource("4_jnx72")]
 visible = false
 z_index = 60
+
+[node name="InstabilityScale" parent="Camera2D" instance=ExtResource("5_amqxo")]
+position = Vector2(-1190, -1325)
 
 [node name="LightSwitch" type="Node2D" parent="."]
 z_index = 60
@@ -426,7 +433,8 @@ position = Vector2(-4345, 1251)
 script = ExtResource("31_vl3l3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pond/Trees/X-Ray"]
-texture = ExtResource("2_ota31")
+position = Vector2(7, 85)
+texture = ExtResource("35_ti4ec")
 
 [node name="X-RayButton" parent="Pond/Trees/X-Ray" instance=ExtResource("3_kscrm")]
 anchors_preset = 8
@@ -434,13 +442,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = -64.0
-offset_right = -55.0
-offset_bottom = -56.0
+offset_left = -61.0
+offset_top = 43.0
+offset_right = -53.0
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(16, 16)
+scale = Vector2(22.6549, 20.9314)
 size_flags_horizontal = 4
 
 [node name="Sprayer" type="Node2D" parent="Pond/Trees"]
@@ -565,6 +573,38 @@ offset_right = -107.0
 offset_bottom = -83.0
 scale = Vector2(21.6968, 20.0825)
 
+[node name="freq1stone" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+stream = ExtResource("77_r8ioq")
+bus = &"freq1stone"
+
+[node name="freq2stone" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+stream = ExtResource("77_r8ioq")
+bus = &"freq2stone"
+
+[node name="freq3stone" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+stream = ExtResource("77_r8ioq")
+bus = &"freq3stone"
+
+[node name="freq4stone" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+stream = ExtResource("77_r8ioq")
+bus = &"freq4stone"
+
+[node name="freq1ctrl" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+stream = ExtResource("77_r8ioq")
+bus = &"freq1ctrl"
+
+[node name="freq2ctrl" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+stream = ExtResource("77_r8ioq")
+bus = &"freq2ctrl"
+
+[node name="freq3ctrl" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+stream = ExtResource("77_r8ioq")
+bus = &"freq3ctrl"
+
+[node name="freq4ctrl" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+stream = ExtResource("77_r8ioq")
+bus = &"freq4ctrl"
+
 [node name="Rocks" type="Node" parent="Rune"]
 script = ExtResource("57_ordbg")
 
@@ -629,7 +669,7 @@ script = ExtResource("58_lx1a3")
 [node name="CabinSprites" type="AnimatedSprite2D" parent="Cabin/TpCabin"]
 position = Vector2(1335, 93)
 sprite_frames = SubResource("SpriteFrames_u46vf")
-animation = &"tp2"
+animation = &"tp1"
 script = ExtResource("63_g3q2u")
 
 [node name="RecordPlayer" type="Node2D" parent="Cabin"]
@@ -649,6 +689,7 @@ offset_right = -159.0
 offset_bottom = -23.0
 rotation = 1.20781
 scale = Vector2(4.39259, 8.24104)
+metadata/_edit_use_anchors_ = true
 
 [node name="ForwButton" parent="Cabin/RecordPlayer/Sprite2D" instance=ExtResource("3_kscrm")]
 offset_left = -217.0
@@ -657,6 +698,7 @@ offset_right = -209.0
 offset_bottom = -46.0
 rotation = 1.20781
 scale = Vector2(4.39259, 8.24104)
+metadata/_edit_use_anchors_ = true
 
 [node name="PlayButton" parent="Cabin/RecordPlayer/Sprite2D" instance=ExtResource("3_kscrm")]
 offset_left = -261.0
@@ -665,6 +707,16 @@ offset_right = -253.0
 offset_bottom = -63.0
 rotation = 1.20781
 scale = Vector2(3.24944, 7.76644)
+metadata/_edit_use_anchors_ = true
+
+[node name="Chirp" type="AudioStreamPlayer" parent="Cabin/RecordPlayer"]
+stream = ExtResource("75_fvknv")
+
+[node name="Wind" type="AudioStreamPlayer" parent="Cabin/RecordPlayer"]
+stream = ExtResource("76_60e4d")
+
+[node name="RuneHum" type="AudioStreamPlayer" parent="Cabin/RecordPlayer"]
+stream = ExtResource("77_r8ioq")
 
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="." method="_on_light_switch_pressed"]
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="Background" method="_on_light_switch_pressed"]

@@ -38,7 +38,9 @@ func _process(delta: float) -> void:
 			cabin_sprites.play(positions[pos])
 			wander = 2
 	if wander == 3:
+		await get_tree().create_timer(1.0).timeout
 		severity = 0.0
+		await get_tree().create_timer(2.0).timeout
 		cabin_sprites.modulate.a8 -= tpspeed * delta
 		if cabin_sprites.modulate.a8 == 0:
 			cabin_sprites.play(base_pos)

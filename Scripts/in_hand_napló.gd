@@ -1,10 +1,9 @@
 extends Node2D
 
-@onready var left_page: AnimatedSprite2D = $"InHandNapló/LeftPage"
-@onready var right_page: AnimatedSprite2D = $"InHandNapló/RightPage"
+@onready var pages: AnimatedSprite2D = $"InHandNapló/Pages"
 
 var page: int
-var pages: Array = ["page1", "page2", "page3"]
+var pagesarr: Array = ["page1", "page2", "page3"]
 
 
 func _ready() -> void:
@@ -12,8 +11,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	left_page.play(pages[page])
-	right_page.play(pages[page])
+	pages.play(pagesarr[page])
 
 
 func _on_left_button_pressed() -> void:
