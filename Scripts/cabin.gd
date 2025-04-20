@@ -14,7 +14,6 @@ var pos
 func _ready() -> void:
 	wander = 0
 	cabin_sprites.play("default")
-	print("I'm here")
 
 func _process(delta: float) -> void:
 	if wander == 1:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://boba8c07n0x1s"]
+[gd_scene load_steps=76 format=3 uid="uid://boba8c07n0x1s"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ojlo6"]
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="2_j7hcf"]
@@ -62,6 +62,10 @@
 [ext_resource type="Script" path="res://Scripts/color_rect.gd" id="37_y5au0"]
 [ext_resource type="Script" path="res://Scripts/light_button.gd" id="40_7jg1w"]
 [ext_resource type="Script" path="res://Scripts/sprinkler.gd" id="41_lijnq"]
+[ext_resource type="Script" path="res://Scripts/humming_stone.gd" id="46_wgyg8"]
+[ext_resource type="Script" path="res://Scripts/freq_select.gd" id="48_5uu1p"]
+[ext_resource type="Script" path="res://Scripts/orange_tri.gd" id="50_m5c0k"]
+[ext_resource type="Script" path="res://Scripts/wheel_tri.gd" id="52_vk7fd"]
 [ext_resource type="Script" path="res://Scripts/cabin.gd" id="58_lx1a3"]
 [ext_resource type="Script" path="res://Scripts/cabin_sprites.gd" id="63_g3q2u"]
 [ext_resource type="Script" path="res://Scripts/record_player.gd" id="64_nxymu"]
@@ -503,6 +507,41 @@ script = ExtResource("32_q01s5")
 
 [node name="Rune" type="Node" parent="."]
 
+[node name="RuneRock" type="Node" parent="Rune"]
+
+[node name="HummingStone" type="Node2D" parent="Rune/RuneRock"]
+script = ExtResource("46_wgyg8")
+
+[node name="InactiveRune" type="Sprite2D" parent="Rune/RuneRock/HummingStone"]
+position = Vector2(-229, -216)
+texture = ExtResource("28_u2gqf")
+
+[node name="ActiveRune" type="Sprite2D" parent="Rune/RuneRock/HummingStone"]
+position = Vector2(-229, -216)
+texture = ExtResource("27_65d2c")
+
+[node name="FreqSelect" type="Node2D" parent="Rune/RuneRock/HummingStone"]
+script = ExtResource("48_5uu1p")
+
+[node name="OrangeTri" type="Sprite2D" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+z_index = 6
+position = Vector2(-1426, 1024)
+texture = ExtResource("21_xjeb1")
+script = ExtResource("50_m5c0k")
+
+[node name="WheelTri" type="Sprite2D" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+z_index = 6
+position = Vector2(-362, 1005)
+texture = ExtResource("22_43jtn")
+script = ExtResource("52_vk7fd")
+
+[node name="InvisiButton" parent="Rune/RuneRock/HummingStone/FreqSelect/WheelTri" instance=ExtResource("3_kscrm")]
+offset_left = -115.0
+offset_top = -91.0
+offset_right = -107.0
+offset_bottom = -83.0
+scale = Vector2(21.6968, 20.0825)
+
 [node name="Rocks" type="Node" parent="Rune"]
 
 [node name="Boulder" parent="Rune/Rocks" instance=ExtResource("4_qlg6m")]
@@ -531,30 +570,6 @@ position = Vector2(465, 937)
 sprite_frames = SubResource("SpriteFrames_216o4")
 animation = &"EARTH"
 script = ExtResource("10_shpuh")
-
-[node name="RuneRock" type="Node" parent="Rune"]
-
-[node name="HummingStone" type="Node2D" parent="Rune/RuneRock"]
-
-[node name="InactiveRune" type="Sprite2D" parent="Rune/RuneRock/HummingStone"]
-position = Vector2(-229, -216)
-texture = ExtResource("28_u2gqf")
-
-[node name="ActiveRune" type="Sprite2D" parent="Rune/RuneRock/HummingStone"]
-position = Vector2(-229, -216)
-texture = ExtResource("27_65d2c")
-
-[node name="FreqSelect" type="Node2D" parent="Rune/RuneRock"]
-
-[node name="OrangeTri" type="Sprite2D" parent="Rune/RuneRock/FreqSelect"]
-z_index = 6
-position = Vector2(-1426, 1024)
-texture = ExtResource("21_xjeb1")
-
-[node name="WheelTri" type="Sprite2D" parent="Rune/RuneRock/FreqSelect"]
-z_index = 6
-position = Vector2(-362, 1005)
-texture = ExtResource("22_43jtn")
 
 [node name="RandoSliders" type="Node" parent="Rune"]
 
@@ -636,6 +651,7 @@ scale = Vector2(3.24944, 7.76644)
 [connection signal="pressed" from="Pond/Trees/Sprayer/Activate Sprinkler/Activator" to="Pond/Trees/Sprayer" method="_on_activator_pressed"]
 [connection signal="pressed" from="Pond/Trees/Sprayer/Move Sprinkler Left/LeftMover" to="Pond/Trees/Sprayer" method="_on_left_mover_pressed"]
 [connection signal="pressed" from="Pond/Trees/Sprayer/Move Sprinkler Right/RightMover" to="Pond/Trees/Sprayer" method="_on_right_mover_pressed"]
+[connection signal="pressed" from="Rune/RuneRock/HummingStone/FreqSelect/WheelTri/InvisiButton" to="Rune/RuneRock/HummingStone/FreqSelect" method="_on_invisi_button_pressed"]
 [connection signal="pressed" from="Rune/Rocks/GravLeft" to="." method="_on_grav_left_pressed"]
 [connection signal="pressed" from="Rune/Rocks/GravRight" to="." method="_on_grav_right_pressed"]
 [connection signal="pressed" from="Cabin/RecordPlayer/Sprite2D/BackButton" to="Cabin/RecordPlayer" method="_on_back_button_pressed"]
