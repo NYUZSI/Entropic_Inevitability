@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://boba8c07n0x1s"]
+[gd_scene load_steps=72 format=3 uid="uid://boba8c07n0x1s"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ojlo6"]
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="2_j7hcf"]
@@ -62,6 +62,9 @@
 [ext_resource type="Script" path="res://Scripts/color_rect.gd" id="37_y5au0"]
 [ext_resource type="Script" path="res://Scripts/light_button.gd" id="40_7jg1w"]
 [ext_resource type="Script" path="res://Scripts/sprinkler.gd" id="41_lijnq"]
+[ext_resource type="Script" path="res://Scripts/cabin.gd" id="58_lx1a3"]
+[ext_resource type="Script" path="res://Scripts/cabin_sprites.gd" id="63_g3q2u"]
+[ext_resource type="Script" path="res://Scripts/record_player.gd" id="64_nxymu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s87d3"]
 animations = [{
@@ -181,25 +184,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"VENUS",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_accb7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("27_65d2c")
-}],
-"loop": true,
-"name": &"fully active",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("28_u2gqf")
-}],
-"loop": true,
-"name": &"inactive",
 "speed": 5.0
 }]
 
@@ -517,95 +501,127 @@ sprite_frames = SubResource("SpriteFrames_tpjkq")
 animation = &"green"
 script = ExtResource("32_q01s5")
 
-[node name="Rune*" type="Node" parent="."]
+[node name="Rune" type="Node" parent="."]
 
-[node name="Rocks*" type="Node" parent="Rune*"]
+[node name="Rocks" type="Node" parent="Rune"]
 
-[node name="Boulder" parent="Rune*/Rocks*" instance=ExtResource("4_qlg6m")]
+[node name="Boulder" parent="Rune/Rocks" instance=ExtResource("4_qlg6m")]
 position = Vector2(-321, 192)
 earth_pos = 192
 venus_pos = 92
 moon_pos = -708
 
-[node name="GravLeft" parent="Rune*/Rocks*" instance=ExtResource("3_kscrm")]
+[node name="GravLeft" parent="Rune/Rocks" instance=ExtResource("3_kscrm")]
 offset_left = 312.0
 offset_top = 1041.0
 offset_right = 320.0
 offset_bottom = 1049.0
 scale = Vector2(14.2912, 12.0855)
 
-[node name="GravRight" parent="Rune*/Rocks*" instance=ExtResource("3_kscrm")]
+[node name="GravRight" parent="Rune/Rocks" instance=ExtResource("3_kscrm")]
 offset_left = 513.0
 offset_top = 1035.0
 offset_right = 521.0
 offset_bottom = 1043.0
 scale = Vector2(13.665, 11.9171)
 
-[node name="PlanetScreen" type="AnimatedSprite2D" parent="Rune*/Rocks*"]
+[node name="PlanetScreen" type="AnimatedSprite2D" parent="Rune/Rocks"]
 z_index = 5
 position = Vector2(465, 937)
 sprite_frames = SubResource("SpriteFrames_216o4")
 animation = &"EARTH"
 script = ExtResource("10_shpuh")
 
-[node name="RuneRock*" type="Node" parent="Rune*"]
+[node name="RuneRock" type="Node" parent="Rune"]
 
-[node name="HummingStone" type="Node2D" parent="Rune*/RuneRock*"]
+[node name="HummingStone" type="Node2D" parent="Rune/RuneRock"]
 
-[node name="Rune" type="AnimatedSprite2D" parent="Rune*/RuneRock*/HummingStone"]
-position = Vector2(-234, -261)
-sprite_frames = SubResource("SpriteFrames_accb7")
-animation = &"inactive"
+[node name="InactiveRune" type="Sprite2D" parent="Rune/RuneRock/HummingStone"]
+position = Vector2(-229, -216)
+texture = ExtResource("28_u2gqf")
 
-[node name="FreqSelect" type="Node2D" parent="Rune*/RuneRock*"]
+[node name="ActiveRune" type="Sprite2D" parent="Rune/RuneRock/HummingStone"]
+position = Vector2(-229, -216)
+texture = ExtResource("27_65d2c")
 
-[node name="OrangeTri" type="Sprite2D" parent="Rune*/RuneRock*/FreqSelect"]
+[node name="FreqSelect" type="Node2D" parent="Rune/RuneRock"]
+
+[node name="OrangeTri" type="Sprite2D" parent="Rune/RuneRock/FreqSelect"]
 z_index = 6
 position = Vector2(-1426, 1024)
 texture = ExtResource("21_xjeb1")
 
-[node name="WheelTri" type="Sprite2D" parent="Rune*/RuneRock*/FreqSelect"]
+[node name="WheelTri" type="Sprite2D" parent="Rune/RuneRock/FreqSelect"]
 z_index = 6
 position = Vector2(-362, 1005)
 texture = ExtResource("22_43jtn")
 
-[node name="RandoSliders" type="Node" parent="Rune*"]
+[node name="RandoSliders" type="Node" parent="Rune"]
 
-[node name="Slider" type="Node2D" parent="Rune*/RandoSliders"]
+[node name="Slider" type="Node2D" parent="Rune/RandoSliders"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Rune*/RandoSliders/Slider"]
+[node name="Sprite2D" type="Sprite2D" parent="Rune/RandoSliders/Slider"]
 z_index = 5
 position = Vector2(1109, 887)
 texture = ExtResource("23_4dqsk")
 
-[node name="Slider2" type="Node2D" parent="Rune*/RandoSliders"]
+[node name="Slider2" type="Node2D" parent="Rune/RandoSliders"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Rune*/RandoSliders/Slider2"]
+[node name="Sprite2D" type="Sprite2D" parent="Rune/RandoSliders/Slider2"]
 z_index = 5
 position = Vector2(1027, 896)
 texture = ExtResource("24_7shk4")
 
-[node name="Slider3" type="Node2D" parent="Rune*/RandoSliders"]
+[node name="Slider3" type="Node2D" parent="Rune/RandoSliders"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Rune*/RandoSliders/Slider3"]
+[node name="Sprite2D" type="Sprite2D" parent="Rune/RandoSliders/Slider3"]
 z_index = 5
 position = Vector2(969, 900)
 texture = ExtResource("25_smfx1")
 
-[node name="Cabin*" type="Node" parent="."]
+[node name="Cabin" type="Node" parent="."]
+script = ExtResource("58_lx1a3")
 
-[node name="TpCabin" type="Node2D" parent="Cabin*"]
+[node name="TpCabin" type="Node2D" parent="Cabin"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cabin*/TpCabin"]
+[node name="CabinSprites" type="AnimatedSprite2D" parent="Cabin/TpCabin"]
 position = Vector2(1335, 93)
 sprite_frames = SubResource("SpriteFrames_u46vf")
+animation = &"tp2"
+script = ExtResource("63_g3q2u")
 
-[node name="RecordPlayer" type="Node2D" parent="Cabin*"]
+[node name="RecordPlayer" type="Node2D" parent="Cabin"]
+script = ExtResource("64_nxymu")
 
-[node name="Sprite2D" type="Sprite2D" parent="Cabin*/RecordPlayer"]
+[node name="Sprite2D" type="Sprite2D" parent="Cabin/RecordPlayer"]
 z_index = 5
-position = Vector2(5051, 1155)
+position = Vector2(5220, 1160)
+scale = Vector2(1.62203, 1.87653)
 texture = ExtResource("30_gsdhq")
+
+[node name="BackButton" parent="Cabin/RecordPlayer/Sprite2D" instance=ExtResource("3_kscrm")]
+offset_left = -167.0
+offset_top = -31.0
+offset_right = -159.0
+offset_bottom = -23.0
+rotation = 1.20781
+scale = Vector2(4.39259, 8.24104)
+
+[node name="ForwButton" parent="Cabin/RecordPlayer/Sprite2D" instance=ExtResource("3_kscrm")]
+offset_left = -217.0
+offset_top = -54.0
+offset_right = -209.0
+offset_bottom = -46.0
+rotation = 1.20781
+scale = Vector2(4.39259, 8.24104)
+
+[node name="PlayButton" parent="Cabin/RecordPlayer/Sprite2D" instance=ExtResource("3_kscrm")]
+offset_left = -261.0
+offset_top = -71.0
+offset_right = -253.0
+offset_bottom = -63.0
+rotation = 1.20781
+scale = Vector2(3.24944, 7.76644)
 
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="Background" method="_on_light_switch_pressed"]
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar" method="_on_light_switch_pressed"]
@@ -620,5 +636,8 @@ texture = ExtResource("30_gsdhq")
 [connection signal="pressed" from="Pond/Trees/Sprayer/Activate Sprinkler/Activator" to="Pond/Trees/Sprayer" method="_on_activator_pressed"]
 [connection signal="pressed" from="Pond/Trees/Sprayer/Move Sprinkler Left/LeftMover" to="Pond/Trees/Sprayer" method="_on_left_mover_pressed"]
 [connection signal="pressed" from="Pond/Trees/Sprayer/Move Sprinkler Right/RightMover" to="Pond/Trees/Sprayer" method="_on_right_mover_pressed"]
-[connection signal="pressed" from="Rune*/Rocks*/GravLeft" to="." method="_on_grav_left_pressed"]
-[connection signal="pressed" from="Rune*/Rocks*/GravRight" to="." method="_on_grav_right_pressed"]
+[connection signal="pressed" from="Rune/Rocks/GravLeft" to="." method="_on_grav_left_pressed"]
+[connection signal="pressed" from="Rune/Rocks/GravRight" to="." method="_on_grav_right_pressed"]
+[connection signal="pressed" from="Cabin/RecordPlayer/Sprite2D/BackButton" to="Cabin/RecordPlayer" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Cabin/RecordPlayer/Sprite2D/ForwButton" to="Cabin/RecordPlayer" method="_on_forw_button_pressed"]
+[connection signal="pressed" from="Cabin/RecordPlayer/Sprite2D/PlayButton" to="Cabin/RecordPlayer" method="_on_play_button_pressed"]
