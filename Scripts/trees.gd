@@ -26,7 +26,7 @@ func reset():
 	severity = 0.0
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if anomalous:
 		selected_anom = anomalies.pick_random()
 		if selected_anom.present == true:

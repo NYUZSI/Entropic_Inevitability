@@ -32,7 +32,7 @@ func reset():
 	light_blocker = false
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	x_ray_view.visible = x_ray.on
 	if lights_on and light_blocker == false:
 		for dark in darkness:

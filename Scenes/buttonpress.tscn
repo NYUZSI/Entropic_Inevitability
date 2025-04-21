@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://4fseweij3xo1"]
+
+[ext_resource type="AudioStream" uid="uid://dd8tfgor1gswd" path="res://Sprites/107147__bubaproducer__button-28.wav" id="1_aknmw"]
+
+[node name="ButtonPress" type="AudioStreamPlayer"]
+stream = ExtResource("1_aknmw")
+bus = &"Buttons"

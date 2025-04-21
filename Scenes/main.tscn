@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://boba8c07n0x1s"]
+[gd_scene load_steps=99 format=3 uid="uid://boba8c07n0x1s"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ojlo6"]
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="2_j7hcf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bxauetblnjnbv" path="res://Sprites/80-Controlled Chaos.png" id="2_uraxw"]
 [ext_resource type="PackedScene" uid="uid://2c4hm7upjlu8" path="res://Scenes/invisibutton.tscn" id="3_kscrm"]
 [ext_resource type="Texture2D" uid="uid://v4b3efp3qsiu" path="res://Sprites/screenwriting-101.png" id="3_o4hl2"]
+[ext_resource type="Texture2D" uid="uid://7p5j16hv582v" path="res://Sprites/Wildling_head_only.svg" id="4_4yma3"]
 [ext_resource type="Texture2D" uid="uid://dxdyuy681k1ty" path="res://Sprites/kar/kar1.png" id="4_8eruq"]
 [ext_resource type="PackedScene" uid="uid://cgyd2jaxvvb13" path="res://Scenes/in_hand_napló.tscn" id="4_jnx72"]
 [ext_resource type="Texture2D" uid="uid://cyy3hv36ncsm6" path="res://Sprites/simple-geometry.png" id="4_kbcs8"]
@@ -39,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://br8iwtiph106c" path="res://Sprites/sargulas/sargulas3.png" id="15_fllmn"]
 [ext_resource type="Texture2D" uid="uid://150b046fe33m" path="res://Sprites/sargulas/sargulas4.png" id="16_osaef"]
 [ext_resource type="Texture2D" uid="uid://d1m7uvyn82vyr" path="res://Sprites/sargulas/sargulas5.png" id="17_7sx5f"]
+[ext_resource type="Script" path="res://Scripts/dashboard_napló.gd" id="17_siqli"]
 [ext_resource type="Script" path="res://Scripts/trees.gd" id="21_h4use"]
 [ext_resource type="Texture2D" uid="uid://b1ri8p2ylicea" path="res://Sprites/frekvencia/frekvenciaharomszög2.png" id="21_xjeb1"]
 [ext_resource type="Texture2D" uid="uid://bunvgxchdtvww" path="res://Sprites/frekvencia/frekvenciaharomszög.png" id="22_43jtn"]
@@ -70,18 +72,26 @@
 [ext_resource type="Script" path="res://Scripts/color_rect.gd" id="37_y5au0"]
 [ext_resource type="Script" path="res://Scripts/light_button.gd" id="40_7jg1w"]
 [ext_resource type="Script" path="res://Scripts/sprinkler.gd" id="41_lijnq"]
+[ext_resource type="PackedScene" uid="uid://4fseweij3xo1" path="res://Scenes/buttonpress.tscn" id="43_2dm4w"]
 [ext_resource type="Script" path="res://Scripts/humming_stone.gd" id="46_wgyg8"]
 [ext_resource type="Script" path="res://Scripts/freq_select.gd" id="48_5uu1p"]
 [ext_resource type="Script" path="res://Scripts/rune_rock.gd" id="48_cx67i"]
 [ext_resource type="Script" path="res://Scripts/orange_tri.gd" id="50_m5c0k"]
 [ext_resource type="Script" path="res://Scripts/wheel_tri.gd" id="52_vk7fd"]
+[ext_resource type="AudioStream" uid="uid://l75yvsg0bjfi" path="res://Sprites/watering-62546.mp3" id="53_6adsu"]
 [ext_resource type="Script" path="res://Scripts/rocks.gd" id="57_ordbg"]
 [ext_resource type="Script" path="res://Scripts/cabin.gd" id="58_lx1a3"]
 [ext_resource type="Script" path="res://Scripts/cabin_sprites.gd" id="63_g3q2u"]
 [ext_resource type="Script" path="res://Scripts/record_player.gd" id="64_nxymu"]
+[ext_resource type="Texture2D" uid="uid://b2y5lo4yn5tk4" path="res://Sprites/ÚJ/frek.png" id="66_gl6bc"]
+[ext_resource type="Texture2D" uid="uid://dd4tey18w7ut4" path="res://Sprites/ÚJ/boly1.png" id="74_1w5qi"]
 [ext_resource type="AudioStream" uid="uid://cf5jjjh6s06by" path="res://Sprites/natural-bird-chirping-322497.mp3" id="75_fvknv"]
+[ext_resource type="Texture2D" uid="uid://5ghq62i18c6v" path="res://Sprites/ÚJ/boly2.png" id="75_rl53g"]
 [ext_resource type="AudioStream" uid="uid://b3kgxjf8jj3fd" path="res://Sprites/wind_44100-27055.mp3" id="76_60e4d"]
 [ext_resource type="AudioStream" uid="uid://bibb847kpuvwd" path="res://Sprites/energy-hum-29083.mp3" id="77_r8ioq"]
+[ext_resource type="Texture2D" uid="uid://3i45mbin5dbw" path="res://Sprites/ÚJ/1.png" id="87_1c0qa"]
+[ext_resource type="Texture2D" uid="uid://du2e18xi385y8" path="res://Sprites/ÚJ/2.png" id="88_kq0dv"]
+[ext_resource type="Texture2D" uid="uid://b44tqqr4idft" path="res://Sprites/ÚJ/3.png" id="89_60jnf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s87d3"]
 animations = [{
@@ -243,31 +253,38 @@ animations = [{
 script = ExtResource("1_ojlo6")
 
 [node name="Wildcards" type="Node2D" parent="."]
+visible = false
 z_index = 1000
 script = ExtResource("2_olmi7")
 
 [node name="Main" type="Sprite2D" parent="Wildcards"]
 z_index = 1000
-position = Vector2(-172, -916)
+position = Vector2(-147, -1059.84)
 scale = Vector2(0.610801, 0.610801)
 texture = ExtResource("2_uraxw")
 
 [node name="wc1" type="Sprite2D" parent="Wildcards"]
-position = Vector2(-909, -3.99999)
+position = Vector2(-947, -147.842)
 scale = Vector2(0.77447, 0.77447)
 texture = ExtResource("3_o4hl2")
 
 [node name="wc2" type="Sprite2D" parent="Wildcards"]
 self_modulate = Color(1, 1, 1, 0.470588)
-position = Vector2(-182, -3.99999)
+position = Vector2(-147, -147.842)
 scale = Vector2(0.77447, 0.77447)
 texture = ExtResource("4_kbcs8")
 
 [node name="wc3" type="Sprite2D" parent="Wildcards"]
 self_modulate = Color(1, 1, 1, 0.470588)
-position = Vector2(528, -3.99999)
+position = Vector2(653, -147.842)
 scale = Vector2(0.77447, 0.77447)
 texture = ExtResource("5_wxyn4")
+
+[node name="logo2" type="Sprite2D" parent="Wildcards"]
+show_behind_parent = true
+position = Vector2(1729, 328)
+scale = Vector2(0.77447, 0.77447)
+texture = ExtResource("4_4yma3")
 
 [node name="Background" parent="." instance=ExtResource("2_p30c0")]
 
@@ -279,7 +296,7 @@ script = ExtResource("2_j7hcf")
 
 [node name="InHandNapló" parent="Camera2D" instance=ExtResource("4_jnx72")]
 visible = false
-z_index = 60
+z_index = 500
 
 [node name="InstabilityScale" parent="Camera2D" instance=ExtResource("5_amqxo")]
 z_index = 80
@@ -289,6 +306,7 @@ position = Vector2(-1190, -1325)
 z_index = 60
 
 [node name="Kar" type="AnimatedSprite2D" parent="LightSwitch"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 6
 position = Vector2(-1993, 945)
 sprite_frames = SubResource("SpriteFrames_s87d3")
@@ -303,13 +321,17 @@ offset_bottom = -300.0
 scale = Vector2(46.7401, 61.9962)
 script = ExtResource("7_o5tw6")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LightSwitch/Kar"]
+
 [node name="Notebook" type="Node2D" parent="."]
 z_index = 60
 
 [node name="DashboardNapló" type="Sprite2D" parent="Notebook"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 5
 position = Vector2(2977, 1083)
 texture = ExtResource("6_7q6wn")
+script = ExtResource("17_siqli")
 
 [node name="NaplóClick" parent="Notebook/DashboardNapló" instance=ExtResource("3_kscrm")]
 offset_left = -381.0
@@ -369,10 +391,11 @@ scale = Vector2(86.8617, 72.4104)
 script = ExtResource("37_y5au0")
 
 [node name="LightButton" type="AnimatedSprite2D" parent="Pond/Hallucinations/Light"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 60
 position = Vector2(-2634, 965)
 sprite_frames = SubResource("SpriteFrames_1to4u")
-animation = &"Pressed"
+animation = &"UnPressed"
 script = ExtResource("40_7jg1w")
 
 [node name="LightButton" parent="Pond/Hallucinations/Light/LightButton" instance=ExtResource("3_kscrm")]
@@ -382,6 +405,8 @@ offset_right = -76.0
 offset_bottom = -74.0
 scale = Vector2(21.3183, 20.5192)
 metadata/_edit_use_anchors_ = true
+
+[node name="ButtonPress" parent="Pond/Hallucinations/Light/LightButton" instance=ExtResource("43_2dm4w")]
 
 [node name="Trees" type="Node" parent="Pond"]
 script = ExtResource("21_h4use")
@@ -466,6 +491,7 @@ position = Vector2(-4345, 1251)
 script = ExtResource("31_vl3l3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pond/Trees/X-Ray"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 position = Vector2(7, 85)
 texture = ExtResource("35_ti4ec")
 
@@ -484,11 +510,14 @@ grow_vertical = 2
 scale = Vector2(22.6549, 20.9314)
 size_flags_horizontal = 4
 
+[node name="ButtonPress" parent="Pond/Trees/X-Ray" instance=ExtResource("43_2dm4w")]
+
 [node name="Sprayer" type="Node2D" parent="Pond/Trees"]
 z_index = 3
 script = ExtResource("22_db8xs")
 
 [node name="RedCanister" type="Sprite2D" parent="Pond/Trees/Sprayer"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 61
 position = Vector2(-3447, 1177)
 texture = ExtResource("8_eglbx")
@@ -502,6 +531,7 @@ rotation = -0.621118
 scale = Vector2(36.6334, 88.764)
 
 [node name="GreenCanister" type="Sprite2D" parent="Pond/Trees/Sprayer"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 60
 position = Vector2(-3143, 1129)
 texture = ExtResource("9_50voa")
@@ -515,6 +545,7 @@ rotation = -0.631443
 scale = Vector2(35.5161, 105.107)
 
 [node name="Activate Sprinkler" type="Sprite2D" parent="Pond/Trees/Sprayer"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 60
 position = Vector2(-4001, 1191)
 texture = ExtResource("10_nh3hs")
@@ -528,6 +559,7 @@ rotation = -0.30911
 scale = Vector2(17.9456, 11.2849)
 
 [node name="Move Sprinkler Left" type="Sprite2D" parent="Pond/Trees/Sprayer"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 60
 position = Vector2(-3942, 1342)
 texture = ExtResource("11_58u88")
@@ -541,6 +573,7 @@ rotation = -0.393788
 scale = Vector2(23.6007, 19.4404)
 
 [node name="Move Sprinkler Right" type="Sprite2D" parent="Pond/Trees/Sprayer"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 60
 position = Vector2(-3834, 1293)
 texture = ExtResource("12_r3jps")
@@ -560,12 +593,18 @@ sprite_frames = SubResource("SpriteFrames_528bv")
 animation = &"Off"
 script = ExtResource("41_lijnq")
 
+[node name="watering" type="AudioStreamPlayer" parent="Pond/Trees/Sprayer/Sprinkler"]
+stream = ExtResource("53_6adsu")
+bus = &"Sprinkler"
+
 [node name="Pipes" type="AnimatedSprite2D" parent="Pond/Trees/Sprayer"]
 z_index = 60
 position = Vector2(-3049, -251)
 sprite_frames = SubResource("SpriteFrames_tpjkq")
 animation = &"green"
 script = ExtResource("32_q01s5")
+
+[node name="ButtonPress" parent="Pond/Trees/Sprayer" instance=ExtResource("43_2dm4w")]
 
 [node name="Rune" type="Node" parent="."]
 
@@ -605,6 +644,11 @@ offset_top = -91.0
 offset_right = -107.0
 offset_bottom = -83.0
 scale = Vector2(21.6968, 20.0825)
+
+[node name="Wheel" type="Sprite2D" parent="Rune/RuneRock/HummingStone/FreqSelect"]
+show_behind_parent = true
+position = Vector2(-392, 993)
+texture = ExtResource("66_gl6bc")
 
 [node name="freq1stone" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
 stream = ExtResource("77_r8ioq")
@@ -667,6 +711,18 @@ offset_top = 1034.0
 offset_right = 522.0
 offset_bottom = 1042.0
 scale = Vector2(13.6147, 12.0163)
+
+[node name="Left" type="Sprite2D" parent="Rune/Rocks"]
+z_index = 100
+position = Vector2(369, 1090)
+texture = ExtResource("74_1w5qi")
+
+[node name="Right" type="Sprite2D" parent="Rune/Rocks"]
+z_index = 100
+position = Vector2(568, 1081)
+texture = ExtResource("75_rl53g")
+
+[node name="ButtonPress" parent="Rune/Rocks" instance=ExtResource("43_2dm4w")]
 
 [node name="RandoSliders" type="Node" parent="Rune"]
 
@@ -741,6 +797,24 @@ rotation = 1.20781
 scale = Vector2(3.24944, 7.76644)
 metadata/_edit_use_anchors_ = true
 
+[node name="play" type="Sprite2D" parent="Cabin/RecordPlayer"]
+z_index = 59
+position = Vector2(4755, 1098)
+scale = Vector2(1.62203, 1.87653)
+texture = ExtResource("87_1c0qa")
+
+[node name="forw" type="Sprite2D" parent="Cabin/RecordPlayer"]
+z_index = 59
+position = Vector2(4818, 1135)
+scale = Vector2(1.62203, 1.87653)
+texture = ExtResource("88_kq0dv")
+
+[node name="back" type="Sprite2D" parent="Cabin/RecordPlayer"]
+z_index = 59
+position = Vector2(4900, 1175)
+scale = Vector2(1.62203, 1.87653)
+texture = ExtResource("89_60jnf")
+
 [node name="Chirp" type="AudioStreamPlayer" parent="Cabin/RecordPlayer"]
 stream = ExtResource("75_fvknv")
 
@@ -750,24 +824,56 @@ stream = ExtResource("76_60e4d")
 [node name="RuneHum" type="AudioStreamPlayer" parent="Cabin/RecordPlayer"]
 stream = ExtResource("77_r8ioq")
 
+[node name="ButtonPress" parent="Cabin/RecordPlayer" instance=ExtResource("43_2dm4w")]
+
+[connection signal="mouse_entered" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar" method="_on_light_switch_mouse_entered"]
+[connection signal="mouse_exited" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar" method="_on_light_switch_mouse_exited"]
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="." method="_on_light_switch_pressed"]
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="Background" method="_on_light_switch_pressed"]
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar" method="_on_light_switch_pressed"]
 [connection signal="pressed" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar/LightSwitch" method="_on_pressed"]
+[connection signal="mouse_entered" from="Notebook/DashboardNapló/NaplóClick" to="Notebook/DashboardNapló" method="_on_napló_click_mouse_entered"]
+[connection signal="mouse_exited" from="Notebook/DashboardNapló/NaplóClick" to="Notebook/DashboardNapló" method="_on_napló_click_mouse_exited"]
 [connection signal="pressed" from="Notebook/DashboardNapló/NaplóClick" to="Camera2D" method="_on_napló_click_pressed"]
+[connection signal="mouse_entered" from="Pond/Hallucinations/Light/LightButton/LightButton" to="Pond/Hallucinations/Light/LightButton" method="_on_light_button_mouse_entered"]
+[connection signal="mouse_exited" from="Pond/Hallucinations/Light/LightButton/LightButton" to="Pond/Hallucinations/Light/LightButton" method="_on_light_button_mouse_exited"]
 [connection signal="pressed" from="Pond/Hallucinations/Light/LightButton/LightButton" to="Pond/Hallucinations" method="_on_light_button_pressed"]
 [connection signal="pressed" from="Pond/Hallucinations/Light/LightButton/LightButton" to="Pond/Hallucinations/Light/ColorRect" method="_on_light_button_pressed"]
 [connection signal="pressed" from="Pond/Hallucinations/Light/LightButton/LightButton" to="Pond/Hallucinations/Light/LightButton" method="_on_light_button_pressed"]
+[connection signal="mouse_entered" from="Pond/Trees/X-Ray/X-RayButton" to="Pond/Trees/X-Ray" method="_on_x_ray_button_mouse_entered"]
+[connection signal="mouse_exited" from="Pond/Trees/X-Ray/X-RayButton" to="Pond/Trees/X-Ray" method="_on_x_ray_button_mouse_exited"]
 [connection signal="pressed" from="Pond/Trees/X-Ray/X-RayButton" to="." method="_on_x_ray_button_pressed"]
 [connection signal="pressed" from="Pond/Trees/X-Ray/X-RayButton" to="Pond/Trees/X-Ray" method="_on_x_ray_button_pressed"]
+[connection signal="mouse_entered" from="Pond/Trees/Sprayer/RedCanister/RedButton" to="Pond/Trees/Sprayer" method="_on_red_button_mouse_entered"]
+[connection signal="mouse_exited" from="Pond/Trees/Sprayer/RedCanister/RedButton" to="Pond/Trees/Sprayer" method="_on_red_button_mouse_exited"]
 [connection signal="pressed" from="Pond/Trees/Sprayer/RedCanister/RedButton" to="Pond/Trees/Sprayer" method="_on_red_button_pressed"]
+[connection signal="mouse_entered" from="Pond/Trees/Sprayer/GreenCanister/GreenButton" to="Pond/Trees/Sprayer" method="_on_green_button_mouse_entered"]
+[connection signal="mouse_exited" from="Pond/Trees/Sprayer/GreenCanister/GreenButton" to="Pond/Trees/Sprayer" method="_on_green_button_mouse_exited"]
 [connection signal="pressed" from="Pond/Trees/Sprayer/GreenCanister/GreenButton" to="Pond/Trees/Sprayer" method="_on_green_button_pressed"]
+[connection signal="mouse_entered" from="Pond/Trees/Sprayer/Activate Sprinkler/Activator" to="Pond/Trees/Sprayer" method="_on_activator_mouse_entered"]
+[connection signal="mouse_exited" from="Pond/Trees/Sprayer/Activate Sprinkler/Activator" to="Pond/Trees/Sprayer" method="_on_activator_mouse_exited"]
 [connection signal="pressed" from="Pond/Trees/Sprayer/Activate Sprinkler/Activator" to="Pond/Trees/Sprayer" method="_on_activator_pressed"]
+[connection signal="mouse_entered" from="Pond/Trees/Sprayer/Move Sprinkler Left/LeftMover" to="Pond/Trees/Sprayer" method="_on_left_mover_mouse_entered"]
+[connection signal="mouse_exited" from="Pond/Trees/Sprayer/Move Sprinkler Left/LeftMover" to="Pond/Trees/Sprayer" method="_on_left_mover_mouse_exited"]
 [connection signal="pressed" from="Pond/Trees/Sprayer/Move Sprinkler Left/LeftMover" to="Pond/Trees/Sprayer" method="_on_left_mover_pressed"]
+[connection signal="mouse_entered" from="Pond/Trees/Sprayer/Move Sprinkler Right/RightMover" to="Pond/Trees/Sprayer" method="_on_right_mover_mouse_entered"]
+[connection signal="mouse_exited" from="Pond/Trees/Sprayer/Move Sprinkler Right/RightMover" to="Pond/Trees/Sprayer" method="_on_right_mover_mouse_exited"]
 [connection signal="pressed" from="Pond/Trees/Sprayer/Move Sprinkler Right/RightMover" to="Pond/Trees/Sprayer" method="_on_right_mover_pressed"]
+[connection signal="mouse_entered" from="Rune/RuneRock/HummingStone/FreqSelect/WheelTri/InvisiButton" to="Rune/RuneRock/HummingStone/FreqSelect" method="_on_invisi_button_mouse_entered"]
+[connection signal="mouse_exited" from="Rune/RuneRock/HummingStone/FreqSelect/WheelTri/InvisiButton" to="Rune/RuneRock/HummingStone/FreqSelect" method="_on_invisi_button_mouse_exited"]
 [connection signal="pressed" from="Rune/RuneRock/HummingStone/FreqSelect/WheelTri/InvisiButton" to="Rune/RuneRock/HummingStone/FreqSelect" method="_on_invisi_button_pressed"]
+[connection signal="mouse_entered" from="Rune/Rocks/GravLeft" to="Rune/Rocks" method="_on_grav_left_mouse_entered"]
+[connection signal="mouse_exited" from="Rune/Rocks/GravLeft" to="Rune/Rocks" method="_on_grav_left_mouse_exited"]
 [connection signal="pressed" from="Rune/Rocks/GravLeft" to="Rune/Rocks" method="_on_grav_left_pressed"]
+[connection signal="mouse_entered" from="Rune/Rocks/GravRight" to="Rune/Rocks" method="_on_grav_right_mouse_entered"]
+[connection signal="mouse_exited" from="Rune/Rocks/GravRight" to="Rune/Rocks" method="_on_grav_right_mouse_exited"]
 [connection signal="pressed" from="Rune/Rocks/GravRight" to="Rune/Rocks" method="_on_grav_right_pressed"]
+[connection signal="mouse_entered" from="Cabin/RecordPlayer/Sprite2D/BackButton" to="Cabin/RecordPlayer" method="_on_back_button_mouse_entered"]
+[connection signal="mouse_exited" from="Cabin/RecordPlayer/Sprite2D/BackButton" to="Cabin/RecordPlayer" method="_on_back_button_mouse_exited"]
 [connection signal="pressed" from="Cabin/RecordPlayer/Sprite2D/BackButton" to="Cabin/RecordPlayer" method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="Cabin/RecordPlayer/Sprite2D/ForwButton" to="Cabin/RecordPlayer" method="_on_forw_button_mouse_entered"]
+[connection signal="mouse_exited" from="Cabin/RecordPlayer/Sprite2D/ForwButton" to="Cabin/RecordPlayer" method="_on_forw_button_mouse_exited"]
 [connection signal="pressed" from="Cabin/RecordPlayer/Sprite2D/ForwButton" to="Cabin/RecordPlayer" method="_on_forw_button_pressed"]
+[connection signal="mouse_entered" from="Cabin/RecordPlayer/Sprite2D/PlayButton" to="Cabin/RecordPlayer" method="_on_play_button_mouse_entered"]
+[connection signal="mouse_exited" from="Cabin/RecordPlayer/Sprite2D/PlayButton" to="Cabin/RecordPlayer" method="_on_play_button_mouse_exited"]
 [connection signal="pressed" from="Cabin/RecordPlayer/Sprite2D/PlayButton" to="Cabin/RecordPlayer" method="_on_play_button_pressed"]

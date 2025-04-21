@@ -42,7 +42,3 @@ func _process(delta: float) -> void:
 	if present == false:
 		modulate.a = 0.0
 		severity = 0.0
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Tester"):
-		present = true

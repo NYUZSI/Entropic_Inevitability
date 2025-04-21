@@ -65,8 +65,3 @@ func _on_light_switch_pressed() -> void:
 	await get_tree().create_timer(12).timeout
 	instability_scale.visible = true
 	start = true
-
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Tester"):
-		reset()

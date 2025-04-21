@@ -7,6 +7,7 @@ extends Node2D
 @onready var freq_2: AudioStreamPlayer = $FreqSelect/freq2stone
 @onready var freq_3: AudioStreamPlayer = $FreqSelect/freq3stone
 @onready var freq_4: AudioStreamPlayer = $FreqSelect/freq4stone
+@onready var wheel: Sprite2D = $FreqSelect/Wheel
 
 var severity: float
 var present: bool
@@ -61,8 +62,3 @@ func _process(delta: float) -> void:
 	if not hum:
 		for freq in freqs:
 			freq.stop()
-
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Tester"):
-		stone_frequency = 1

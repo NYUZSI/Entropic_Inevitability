@@ -6,6 +6,7 @@ extends Node2D
 @onready var freq_2: AudioStreamPlayer = $freq2ctrl
 @onready var freq_3: AudioStreamPlayer = $freq3ctrl
 @onready var freq_4: AudioStreamPlayer = $freq4ctrl
+@onready var wheel: Sprite2D = $Wheel
 
 # 0=off, 1=1st freq..., 4=4th freq
 var frequency: int
@@ -16,6 +17,12 @@ var freqs: Array
 func _ready() -> void:
 	freqs = [freq_1, freq_2, freq_3, freq_4]
 	frequency = 0
+	wheel_tri.modulate.r8 = 200
+	wheel_tri.modulate.g8 = 200
+	wheel_tri.modulate.b8 = 200
+	wheel.modulate.r8 = 200
+	wheel.modulate.g8 = 200
+	wheel.modulate.b8 = 200
 
 
 func reset():
@@ -50,3 +57,21 @@ func _on_invisi_button_pressed() -> void:
 	frequency += 1
 	if frequency == 5:
 		frequency = 0
+
+
+func _on_invisi_button_mouse_entered() -> void:
+	wheel_tri.modulate.r8 = 255
+	wheel_tri.modulate.g8 = 255
+	wheel_tri.modulate.b8 = 255
+	wheel.modulate.r8 = 255
+	wheel.modulate.g8 = 255
+	wheel.modulate.b8 = 255
+
+
+func _on_invisi_button_mouse_exited() -> void:
+	wheel_tri.modulate.r8 = 200
+	wheel_tri.modulate.g8 = 200
+	wheel_tri.modulate.b8 = 200
+	wheel.modulate.r8 = 200
+	wheel.modulate.g8 = 200
+	wheel.modulate.b8 = 200

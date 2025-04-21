@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+@onready var watering: AudioStreamPlayer = $watering
+
 var rightpos: Vector2 = Vector2(-3158, -530)
 var leftpos: Vector2 = Vector2(-5432, -178)
 var desiredpos: int = 1
@@ -32,5 +34,9 @@ func _process(delta: float) -> void:
 				position.y = leftpos.y
 	if active == true:
 		play("On")
+		if not watering.playing:
+			watering.play()
 	else:
 		play("Off")
+		if watering.playing:
+			watering.stop()
