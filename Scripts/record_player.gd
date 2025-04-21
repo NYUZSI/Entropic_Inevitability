@@ -12,10 +12,12 @@ extends Node2D
 # 0 = birds for tp1; 1 = wind for tp2; 2 = rune frequency for tp3
 var sound: int
 var playing: bool
+var playable: bool
 
 func _ready() -> void:
 	sound = 0
 	playing = false
+	playable = true
 	play.modulate.r8 = 200
 	play.modulate.g8 = 200
 	play.modulate.b8 = 200
@@ -58,7 +60,7 @@ func _on_forw_button_pressed() -> void:
 
 
 func _process(delta: float) -> void:
-	if playing == true:
+	if playing and playable:
 		match sound:
 			0:
 				if not chirp.playing:
@@ -75,7 +77,7 @@ func _process(delta: float) -> void:
 					chirp.stop()
 					wind.stop()
 					rune_hum.play()
-	if playing == false:
+	if not playing:
 		if chirp.playing:
 			chirp.stop()
 		if wind.playing:

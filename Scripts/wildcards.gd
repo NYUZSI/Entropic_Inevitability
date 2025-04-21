@@ -21,3 +21,4 @@ func _process(delta: float) -> void:
 			modulate.a -= 1 * delta
 		else:
 			visible = false
+			get_tree().change_scene_to_file("res://Scenes/main.tscn")

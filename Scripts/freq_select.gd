@@ -12,6 +12,7 @@ extends Node2D
 var frequency: int
 var speed = 300
 var freqs: Array
+var playable: bool
 
 
 func _ready() -> void:
@@ -23,6 +24,7 @@ func _ready() -> void:
 	wheel.modulate.r8 = 200
 	wheel.modulate.g8 = 200
 	wheel.modulate.b8 = 200
+	playable = true
 
 
 func reset():
@@ -43,7 +45,7 @@ func _process(delta: float) -> void:
 		orange_tri.position.x -= speed * delta
 		if orange_tri.position.x < orange_tri.positions[frequency]:
 			orange_tri.position.x = orange_tri.positions[frequency]
-	if frequency != 0 and orange_tri.position.x == orange_tri.positions[frequency]:
+	if frequency != 0 and orange_tri.position.x == orange_tri.positions[frequency] and playable:
 		if not freqs[frequency - 1].playing:
 			for freq in freqs:
 				freq.stop()

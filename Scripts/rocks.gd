@@ -49,7 +49,6 @@ func _on_grav_left_pressed() -> void:
 	grav_index -= 1
 	if grav_index == -1:
 		grav_index = 2
-	print("I'm pressed")
 	if not button_press.playing:
 		button_press.play()
 
@@ -58,7 +57,6 @@ func _on_grav_right_pressed() -> void:
 	grav_index += 1
 	if grav_index == 3:
 		grav_index = 0
-	print("I'm pressed")
 	if not button_press.playing:
 		button_press.play()
 

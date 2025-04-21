@@ -15,6 +15,7 @@ var stone_frequency: int
 var speed = 0.1
 var hum: bool
 var freqs: Array
+var playable: bool
 
 func _ready() -> void:
 	freqs = [freq_1, freq_2, freq_3, freq_4]
@@ -22,6 +23,7 @@ func _ready() -> void:
 	severity = 0.0
 	stone_frequency = 0
 	hum = false
+	playable = true
 
 
 func reset():
@@ -54,7 +56,7 @@ func _process(delta: float) -> void:
 		stone_frequency = randi_range(1, 4)
 		hum = true
 		present = false
-	if hum:
+	if hum and playable:
 		if not freqs[stone_frequency - 1].playing:
 			for freq in freqs:
 				freq.stop()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://coab6fguh2w1r"]
+[gd_scene load_steps=7 format=3 uid="uid://coab6fguh2w1r"]
 
 [ext_resource type="Texture2D" uid="uid://dvahn7acuoxxs" path="res://Sprites/össz view/-bal.png" id="1_52cnj"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_xtprk"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cjta7imdk2rdq" path="res://Sprites/össz view/közép.png" id="3_lcu6m"]
 [ext_resource type="Texture2D" uid="uid://b4qvclxktl4qt" path="res://Sprites/össz view/jobb.png" id="4_ug7kl"]
 [ext_resource type="Texture2D" uid="uid://c1tx6af3duuxo" path="res://Sprites/VEZERLŐPULT.png" id="5_8mnm5"]
-[ext_resource type="AudioStream" uid="uid://cd1h62i1rid7b" path="res://Sprites/spotlight-stereo-91360.mp3" id="7_3jos7"]
 
 [node name="Background" type="Node2D"]
 script = ExtResource("1_xtprk")
@@ -65,6 +64,3 @@ offset_right = 2168.0
 offset_bottom = -3100.0
 scale = Vector2(152.699, 188.706)
 color = Color(0, 0, 0, 1)
-
-[node name="LightSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_3jos7")

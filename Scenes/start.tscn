@@ -1,0 +1,362 @@
+[gd_scene load_steps=46 format=3 uid="uid://d101m87ycae2b"]
+
+[ext_resource type="Script" path="res://Scripts/wildcards.gd" id="1_c1cso"]
+[ext_resource type="Texture2D" uid="uid://bxauetblnjnbv" path="res://Sprites/80-Controlled Chaos.png" id="2_hur4l"]
+[ext_resource type="Texture2D" uid="uid://v4b3efp3qsiu" path="res://Sprites/screenwriting-101.png" id="3_bhhqp"]
+[ext_resource type="Texture2D" uid="uid://cyy3hv36ncsm6" path="res://Sprites/simple-geometry.png" id="4_qx30w"]
+[ext_resource type="Texture2D" uid="uid://moq2meflg6aq" path="res://Sprites/Wildcard-man.png" id="5_d2ntw"]
+[ext_resource type="Texture2D" uid="uid://7p5j16hv582v" path="res://Sprites/Wildling_head_only.svg" id="6_tw1ig"]
+[ext_resource type="PackedScene" uid="uid://coab6fguh2w1r" path="res://Scenes/background.tscn" id="7_mwey4"]
+[ext_resource type="Script" path="res://Scripts/startcamera.gd" id="8_c0pp0"]
+[ext_resource type="Script" path="res://Scripts/startx_ray.gd" id="9_vy2d7"]
+[ext_resource type="Texture2D" uid="uid://dxdyuy681k1ty" path="res://Sprites/kar/kar1.png" id="10_7ia6n"]
+[ext_resource type="Texture2D" uid="uid://dm5y7ugg2d55q" path="res://Sprites/kar/kar2.png" id="11_lb58a"]
+[ext_resource type="Texture2D" uid="uid://ei3d15wdyrjq" path="res://Sprites/napló.png" id="12_4mo8a"]
+[ext_resource type="Texture2D" uid="uid://df3ao2s8nlqnu" path="res://Sprites/halufénygombok/halufénygomb2.png" id="13_7chg3"]
+[ext_resource type="Texture2D" uid="uid://c5hg6gg5livv" path="res://Sprites/halufénygombok/halufénygomb1.png" id="14_cq5d1"]
+[ext_resource type="Texture2D" uid="uid://bgin3j6jcmhdj" path="res://Sprites/tartály/pirostartály.png" id="15_kesmu"]
+[ext_resource type="Texture2D" uid="uid://dqbwc8v7jbm5o" path="res://Sprites/tartály/zöldtartály.png" id="16_rxpt5"]
+[ext_resource type="Texture2D" uid="uid://bvm7c8l41y2fv" path="res://Sprites/gombocskak/gombocskabal.png" id="17_fl1oq"]
+[ext_resource type="Texture2D" uid="uid://pco485u0nask" path="res://Sprites/gombocskak/gombocskaoldalrabal2.png" id="18_xog3t"]
+[ext_resource type="Texture2D" uid="uid://duyjfnpo6x768" path="res://Sprites/gombocskak/gombocskaoldalrabal.png" id="19_axsde"]
+[ext_resource type="Texture2D" uid="uid://c46khotanfwfc" path="res://Sprites/cső/zöldcső.png" id="20_e4sus"]
+[ext_resource type="Texture2D" uid="uid://cg1kf6olbiphy" path="res://Sprites/cső/piroscső.png" id="21_xjkus"]
+[ext_resource type="Texture2D" uid="uid://c260c8gamma7n" path="res://Sprites/magnó.png" id="22_clu28"]
+[ext_resource type="Texture2D" uid="uid://3i45mbin5dbw" path="res://Sprites/ÚJ/1.png" id="23_k45kt"]
+[ext_resource type="Texture2D" uid="uid://du2e18xi385y8" path="res://Sprites/ÚJ/2.png" id="24_xwrl7"]
+[ext_resource type="Texture2D" uid="uid://b44tqqr4idft" path="res://Sprites/ÚJ/3.png" id="25_er001"]
+[ext_resource type="AudioStream" uid="uid://cf5jjjh6s06by" path="res://Sprites/natural-bird-chirping-322497.mp3" id="26_ja5x0"]
+[ext_resource type="AudioStream" uid="uid://b3kgxjf8jj3fd" path="res://Sprites/wind_44100-27055.mp3" id="27_jjq5e"]
+[ext_resource type="AudioStream" uid="uid://bibb847kpuvwd" path="res://Sprites/energy-hum-29083.mp3" id="28_lbpvm"]
+[ext_resource type="PackedScene" uid="uid://4fseweij3xo1" path="res://Scenes/buttonpress.tscn" id="29_eytv0"]
+[ext_resource type="Texture2D" uid="uid://davkin02wmb13" path="res://Sprites/xraygomb.png" id="30_b5o2m"]
+[ext_resource type="Texture2D" uid="uid://b1ri8p2ylicea" path="res://Sprites/frekvencia/frekvenciaharomszög2.png" id="31_khy0i"]
+[ext_resource type="Texture2D" uid="uid://bunvgxchdtvww" path="res://Sprites/frekvencia/frekvenciaharomszög.png" id="32_mh202"]
+[ext_resource type="Texture2D" uid="uid://b2y5lo4yn5tk4" path="res://Sprites/ÚJ/frek.png" id="33_r330v"]
+[ext_resource type="Texture2D" uid="uid://c8m68kkxu0g3h" path="res://Sprites/bolygók/föld.png" id="34_u1qsr"]
+[ext_resource type="Texture2D" uid="uid://ch603pwrs5qsf" path="res://Sprites/bolygók/hold.png" id="35_lvmr0"]
+[ext_resource type="Texture2D" uid="uid://bn2ly4wd2luli" path="res://Sprites/bolygók/venus.png" id="36_cej2n"]
+[ext_resource type="Texture2D" uid="uid://dd4tey18w7ut4" path="res://Sprites/ÚJ/boly1.png" id="37_44l7p"]
+[ext_resource type="Texture2D" uid="uid://5ghq62i18c6v" path="res://Sprites/ÚJ/boly2.png" id="38_ehgu8"]
+[ext_resource type="Texture2D" uid="uid://d11htepb7p4ck" path="res://Sprites/slider/kissslider.png" id="39_pp5ud"]
+[ext_resource type="Texture2D" uid="uid://cumv00orqqkd0" path="res://Sprites/slider/kisslider2.png" id="40_s4ghv"]
+[ext_resource type="Texture2D" uid="uid://j3hp84bb7g8p" path="res://Sprites/slider/kisslider3.png" id="41_7nl3y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ld4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_7ia6n")
+}],
+"loop": true,
+"name": &"Dark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_lb58a")
+}],
+"loop": true,
+"name": &"Light",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cgdi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_7chg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7chg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7chg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7chg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7chg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cq5d1")
+}],
+"loop": false,
+"name": &"Pressed",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_cq5d1")
+}],
+"loop": true,
+"name": &"UnPressed",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxq81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_e4sus")
+}],
+"loop": false,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_xjkus")
+}],
+"loop": false,
+"name": &"red",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2o10h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_u1qsr")
+}],
+"loop": true,
+"name": &"EARTH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_lvmr0")
+}],
+"loop": true,
+"name": &"MOON",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_cej2n")
+}],
+"loop": true,
+"name": &"VENUS",
+"speed": 5.0
+}]
+
+[node name="StartUp" type="Node2D"]
+
+[node name="Wildcards" type="Node2D" parent="."]
+z_index = 1000
+script = ExtResource("1_c1cso")
+
+[node name="Main" type="Sprite2D" parent="Wildcards"]
+z_index = 1000
+position = Vector2(-147, -1059.84)
+scale = Vector2(0.610801, 0.610801)
+texture = ExtResource("2_hur4l")
+
+[node name="wc1" type="Sprite2D" parent="Wildcards"]
+position = Vector2(-947, -147.842)
+scale = Vector2(0.77447, 0.77447)
+texture = ExtResource("3_bhhqp")
+
+[node name="wc2" type="Sprite2D" parent="Wildcards"]
+self_modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(-147, -147.842)
+scale = Vector2(0.77447, 0.77447)
+texture = ExtResource("4_qx30w")
+
+[node name="wc3" type="Sprite2D" parent="Wildcards"]
+self_modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(653, -147.842)
+scale = Vector2(0.77447, 0.77447)
+texture = ExtResource("5_d2ntw")
+
+[node name="logo2" type="Sprite2D" parent="Wildcards"]
+show_behind_parent = true
+position = Vector2(1729, 328)
+scale = Vector2(0.77447, 0.77447)
+texture = ExtResource("6_tw1ig")
+
+[node name="Background" parent="." instance=ExtResource("7_mwey4")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 60
+position = Vector2(-147, 0)
+zoom = Vector2(0.25, 0.22)
+script = ExtResource("8_c0pp0")
+
+[node name="Pond" type="Node" parent="."]
+
+[node name="Trees" type="Node" parent="Pond"]
+
+[node name="X-Ray" type="Node2D" parent="Pond/Trees"]
+script = ExtResource("9_vy2d7")
+
+[node name="Kar" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 500
+position = Vector2(-1993, 945)
+sprite_frames = SubResource("SpriteFrames_7ld4t")
+animation = &"Dark"
+
+[node name="DashboardNapló" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 500
+position = Vector2(2977, 1083)
+texture = ExtResource("12_4mo8a")
+
+[node name="LightButton" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 60
+position = Vector2(-2634, 965)
+sprite_frames = SubResource("SpriteFrames_2cgdi")
+animation = &"UnPressed"
+
+[node name="RedCanister" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 61
+position = Vector2(-3447, 1177)
+texture = ExtResource("15_kesmu")
+
+[node name="GreenCanister" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 60
+position = Vector2(-3143, 1129)
+texture = ExtResource("16_rxpt5")
+
+[node name="Activate Sprinkler" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 60
+position = Vector2(-4001, 1191)
+texture = ExtResource("17_fl1oq")
+
+[node name="Move Sprinkler Left" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 60
+position = Vector2(-3942, 1342)
+texture = ExtResource("18_xog3t")
+
+[node name="Move Sprinkler Right" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 60
+position = Vector2(-3834, 1293)
+texture = ExtResource("19_axsde")
+
+[node name="Pipes" type="AnimatedSprite2D" parent="."]
+z_index = 60
+position = Vector2(-3049, -251)
+sprite_frames = SubResource("SpriteFrames_dxq81")
+animation = &"green"
+
+[node name="RecordPlayer" type="Node2D" parent="."]
+z_index = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="RecordPlayer"]
+z_index = 5
+position = Vector2(5220, 1160)
+scale = Vector2(1.62203, 1.87653)
+texture = ExtResource("22_clu28")
+
+[node name="play" type="Sprite2D" parent="RecordPlayer"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 59
+position = Vector2(4755, 1098)
+scale = Vector2(1.62203, 1.87653)
+texture = ExtResource("23_k45kt")
+
+[node name="forw" type="Sprite2D" parent="RecordPlayer"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 59
+position = Vector2(4818, 1135)
+scale = Vector2(1.62203, 1.87653)
+texture = ExtResource("24_xwrl7")
+
+[node name="back" type="Sprite2D" parent="RecordPlayer"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 59
+position = Vector2(4900, 1175)
+scale = Vector2(1.62203, 1.87653)
+texture = ExtResource("25_er001")
+
+[node name="Chirp" type="AudioStreamPlayer" parent="RecordPlayer"]
+stream = ExtResource("26_ja5x0")
+
+[node name="Wind" type="AudioStreamPlayer" parent="RecordPlayer"]
+stream = ExtResource("27_jjq5e")
+
+[node name="RuneHum" type="AudioStreamPlayer" parent="RecordPlayer"]
+stream = ExtResource("28_lbpvm")
+
+[node name="ButtonPress" parent="RecordPlayer" instance=ExtResource("29_eytv0")]
+
+[node name="X-Ray" type="Node2D" parent="."]
+z_index = 60
+position = Vector2(-4345, 1251)
+
+[node name="Sprite2D" type="Sprite2D" parent="X-Ray"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+position = Vector2(7, 85)
+texture = ExtResource("30_b5o2m")
+
+[node name="FreqSelect" type="Node2D" parent="."]
+z_index = 60
+
+[node name="OrangeTri" type="Sprite2D" parent="FreqSelect"]
+z_index = 6
+position = Vector2(-1426, 1024)
+texture = ExtResource("31_khy0i")
+
+[node name="WheelTri" type="Sprite2D" parent="FreqSelect"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 6
+position = Vector2(-362, 1005)
+texture = ExtResource("32_mh202")
+
+[node name="Wheel" type="Sprite2D" parent="FreqSelect"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+show_behind_parent = true
+position = Vector2(-392, 993)
+texture = ExtResource("33_r330v")
+
+[node name="PlanetScreen" type="AnimatedSprite2D" parent="."]
+z_index = 60
+position = Vector2(465, 937)
+sprite_frames = SubResource("SpriteFrames_2o10h")
+animation = &"EARTH"
+
+[node name="Left" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 100
+position = Vector2(369, 1090)
+texture = ExtResource("37_44l7p")
+
+[node name="Right" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+z_index = 100
+position = Vector2(568, 1081)
+texture = ExtResource("38_ehgu8")
+
+[node name="RandoSliders" type="Node" parent="."]
+
+[node name="Slider" type="Node2D" parent="RandoSliders"]
+z_index = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="RandoSliders/Slider"]
+z_index = 5
+position = Vector2(1109, 887)
+texture = ExtResource("39_pp5ud")
+
+[node name="Slider2" type="Node2D" parent="RandoSliders"]
+z_index = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="RandoSliders/Slider2"]
+z_index = 5
+position = Vector2(1027, 896)
+texture = ExtResource("40_s4ghv")
+
+[node name="Slider3" type="Node2D" parent="RandoSliders"]
+z_index = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="RandoSliders/Slider3"]
+z_index = 5
+position = Vector2(969, 900)
+texture = ExtResource("41_7nl3y")

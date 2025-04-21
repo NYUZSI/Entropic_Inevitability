@@ -7,10 +7,12 @@ var leftpos: Vector2 = Vector2(-5432, -178)
 var desiredpos: int = 1
 var active = false
 var speed = 1000
+var playable: bool
 
 func _ready() -> void:
 	position = rightpos
 	active = false
+	playable = true
 
 
 func _process(delta: float) -> void:
@@ -34,7 +36,7 @@ func _process(delta: float) -> void:
 				position.y = leftpos.y
 	if active == true:
 		play("On")
-		if not watering.playing:
+		if not watering.playing and playable:
 			watering.play()
 	else:
 		play("Off")

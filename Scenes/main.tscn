@@ -2,19 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ojlo6"]
 [ext_resource type="Script" path="res://Scripts/camera_movement.gd" id="2_j7hcf"]
-[ext_resource type="Script" path="res://Scripts/wildcards.gd" id="2_olmi7"]
 [ext_resource type="PackedScene" uid="uid://coab6fguh2w1r" path="res://Scenes/background.tscn" id="2_p30c0"]
-[ext_resource type="Texture2D" uid="uid://bxauetblnjnbv" path="res://Sprites/80-Controlled Chaos.png" id="2_uraxw"]
 [ext_resource type="PackedScene" uid="uid://2c4hm7upjlu8" path="res://Scenes/invisibutton.tscn" id="3_kscrm"]
-[ext_resource type="Texture2D" uid="uid://v4b3efp3qsiu" path="res://Sprites/screenwriting-101.png" id="3_o4hl2"]
-[ext_resource type="Texture2D" uid="uid://7p5j16hv582v" path="res://Sprites/Wildling_head_only.svg" id="4_4yma3"]
 [ext_resource type="Texture2D" uid="uid://dxdyuy681k1ty" path="res://Sprites/kar/kar1.png" id="4_8eruq"]
 [ext_resource type="PackedScene" uid="uid://cgyd2jaxvvb13" path="res://Scenes/in_hand_napló.tscn" id="4_jnx72"]
-[ext_resource type="Texture2D" uid="uid://cyy3hv36ncsm6" path="res://Sprites/simple-geometry.png" id="4_kbcs8"]
 [ext_resource type="PackedScene" uid="uid://bksodmk1l2els" path="res://Scenes/boulder.tscn" id="4_qlg6m"]
 [ext_resource type="PackedScene" uid="uid://dr0wxqhgya05l" path="res://Scenes/instability_scale.tscn" id="5_amqxo"]
 [ext_resource type="Texture2D" uid="uid://dm5y7ugg2d55q" path="res://Sprites/kar/kar2.png" id="5_l4mhh"]
-[ext_resource type="Texture2D" uid="uid://moq2meflg6aq" path="res://Sprites/Wildcard-man.png" id="5_wxyn4"]
 [ext_resource type="Texture2D" uid="uid://ei3d15wdyrjq" path="res://Sprites/napló.png" id="6_7q6wn"]
 [ext_resource type="Script" path="res://Scripts/kar.gd" id="6_qk0cr"]
 [ext_resource type="Texture2D" uid="uid://c8m68kkxu0g3h" path="res://Sprites/bolygók/föld.png" id="7_3o1kg"]
@@ -81,17 +75,23 @@
 [ext_resource type="AudioStream" uid="uid://l75yvsg0bjfi" path="res://Sprites/watering-62546.mp3" id="53_6adsu"]
 [ext_resource type="Script" path="res://Scripts/rocks.gd" id="57_ordbg"]
 [ext_resource type="Script" path="res://Scripts/cabin.gd" id="58_lx1a3"]
+[ext_resource type="AudioStream" uid="uid://313fn84dpsqa" path="res://Sprites/freq1.wav" id="62_m2euk"]
 [ext_resource type="Script" path="res://Scripts/cabin_sprites.gd" id="63_g3q2u"]
+[ext_resource type="AudioStream" uid="uid://dxr0uhwk37k4b" path="res://Sprites/freq2.wav" id="63_sjgyo"]
+[ext_resource type="AudioStream" uid="uid://bxpjv1gqo4pu5" path="res://Sprites/freq3.wav" id="64_m8y4q"]
 [ext_resource type="Script" path="res://Scripts/record_player.gd" id="64_nxymu"]
+[ext_resource type="AudioStream" uid="uid://mskhi17wqpf6" path="res://Sprites/freq4.wav" id="65_fcvho"]
 [ext_resource type="Texture2D" uid="uid://b2y5lo4yn5tk4" path="res://Sprites/ÚJ/frek.png" id="66_gl6bc"]
 [ext_resource type="Texture2D" uid="uid://dd4tey18w7ut4" path="res://Sprites/ÚJ/boly1.png" id="74_1w5qi"]
 [ext_resource type="AudioStream" uid="uid://cf5jjjh6s06by" path="res://Sprites/natural-bird-chirping-322497.mp3" id="75_fvknv"]
 [ext_resource type="Texture2D" uid="uid://5ghq62i18c6v" path="res://Sprites/ÚJ/boly2.png" id="75_rl53g"]
 [ext_resource type="AudioStream" uid="uid://b3kgxjf8jj3fd" path="res://Sprites/wind_44100-27055.mp3" id="76_60e4d"]
-[ext_resource type="AudioStream" uid="uid://bibb847kpuvwd" path="res://Sprites/energy-hum-29083.mp3" id="77_r8ioq"]
 [ext_resource type="Texture2D" uid="uid://3i45mbin5dbw" path="res://Sprites/ÚJ/1.png" id="87_1c0qa"]
+[ext_resource type="AudioStream" uid="uid://cd1h62i1rid7b" path="res://Sprites/spotlight-stereo-91360.mp3" id="87_08ihk"]
 [ext_resource type="Texture2D" uid="uid://du2e18xi385y8" path="res://Sprites/ÚJ/2.png" id="88_kq0dv"]
 [ext_resource type="Texture2D" uid="uid://b44tqqr4idft" path="res://Sprites/ÚJ/3.png" id="89_60jnf"]
+[ext_resource type="AudioStream" uid="uid://bwibqwypginvu" path="res://Sprites/power-down-45784.mp3" id="91_ktx6f"]
+[ext_resource type="AudioStream" uid="uid://1rh4bhkx48ka" path="res://Sprites/the-woods-mystery-intrigue-background-music-110802.mp3" id="92_ja4fi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s87d3"]
 animations = [{
@@ -251,40 +251,6 @@ animations = [{
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ojlo6")
-
-[node name="Wildcards" type="Node2D" parent="."]
-visible = false
-z_index = 1000
-script = ExtResource("2_olmi7")
-
-[node name="Main" type="Sprite2D" parent="Wildcards"]
-z_index = 1000
-position = Vector2(-147, -1059.84)
-scale = Vector2(0.610801, 0.610801)
-texture = ExtResource("2_uraxw")
-
-[node name="wc1" type="Sprite2D" parent="Wildcards"]
-position = Vector2(-947, -147.842)
-scale = Vector2(0.77447, 0.77447)
-texture = ExtResource("3_o4hl2")
-
-[node name="wc2" type="Sprite2D" parent="Wildcards"]
-self_modulate = Color(1, 1, 1, 0.470588)
-position = Vector2(-147, -147.842)
-scale = Vector2(0.77447, 0.77447)
-texture = ExtResource("4_kbcs8")
-
-[node name="wc3" type="Sprite2D" parent="Wildcards"]
-self_modulate = Color(1, 1, 1, 0.470588)
-position = Vector2(653, -147.842)
-scale = Vector2(0.77447, 0.77447)
-texture = ExtResource("5_wxyn4")
-
-[node name="logo2" type="Sprite2D" parent="Wildcards"]
-show_behind_parent = true
-position = Vector2(1729, 328)
-scale = Vector2(0.77447, 0.77447)
-texture = ExtResource("4_4yma3")
 
 [node name="Background" parent="." instance=ExtResource("2_p30c0")]
 
@@ -651,35 +617,35 @@ position = Vector2(-392, 993)
 texture = ExtResource("66_gl6bc")
 
 [node name="freq1stone" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
-stream = ExtResource("77_r8ioq")
+stream = ExtResource("62_m2euk")
 bus = &"freq1stone"
 
 [node name="freq2stone" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
-stream = ExtResource("77_r8ioq")
+stream = ExtResource("63_sjgyo")
 bus = &"freq2stone"
 
 [node name="freq3stone" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
-stream = ExtResource("77_r8ioq")
+stream = ExtResource("64_m8y4q")
 bus = &"freq3stone"
 
 [node name="freq4stone" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
-stream = ExtResource("77_r8ioq")
+stream = ExtResource("65_fcvho")
 bus = &"freq4stone"
 
 [node name="freq1ctrl" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
-stream = ExtResource("77_r8ioq")
+stream = ExtResource("62_m2euk")
 bus = &"freq1ctrl"
 
 [node name="freq2ctrl" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
-stream = ExtResource("77_r8ioq")
+stream = ExtResource("63_sjgyo")
 bus = &"freq2ctrl"
 
 [node name="freq3ctrl" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
-stream = ExtResource("77_r8ioq")
+stream = ExtResource("64_m8y4q")
 bus = &"freq3ctrl"
 
 [node name="freq4ctrl" type="AudioStreamPlayer" parent="Rune/RuneRock/HummingStone/FreqSelect"]
-stream = ExtResource("77_r8ioq")
+stream = ExtResource("65_fcvho")
 bus = &"freq4ctrl"
 
 [node name="Rocks" type="Node" parent="Rune"]
@@ -822,9 +788,20 @@ stream = ExtResource("75_fvknv")
 stream = ExtResource("76_60e4d")
 
 [node name="RuneHum" type="AudioStreamPlayer" parent="Cabin/RecordPlayer"]
-stream = ExtResource("77_r8ioq")
+stream = ExtResource("62_m2euk")
 
 [node name="ButtonPress" parent="Cabin/RecordPlayer" instance=ExtResource("43_2dm4w")]
+
+[node name="LightSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("87_08ihk")
+
+[node name="PowerDown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("91_ktx6f")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("92_ja4fi")
+bus = &"BGM"
+parameters/looping = true
 
 [connection signal="mouse_entered" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar" method="_on_light_switch_mouse_entered"]
 [connection signal="mouse_exited" from="LightSwitch/Kar/LightSwitch" to="LightSwitch/Kar" method="_on_light_switch_mouse_exited"]
